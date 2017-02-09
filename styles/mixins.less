@@ -1,0 +1,123 @@
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-ms-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+.transform (@string) {
+	-webkit-transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+	transform: @string;
+}
+
+// Flexbox mixins for parent (containers)
+
+.display-flex(@flex: flex){
+  display: ~"-webkit-@{flex}";
+  display: ~"-moz-@{flex}";
+  display: ~"-ms-@{flex}";
+  display: ~"-ms-@{flex}";
+  display: ~"@{flex}";
+}
+
+.justify-content(@justify: space-between){
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+      -ms-justify-content: @justify;
+          justify-content: @justify;
+}
+
+.flex-direction(@direction: row){
+  -webkit-flex-direction: @direction;
+     -moz-flex-direction: @direction;
+      -ms-flex-direction: @direction;
+          flex-direction: @direction;
+}
+
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+      -ms-align-items: @align;
+          align-items: @align;
+}
+
+.flex-flow(@direction, @wrap) {
+	-webkit-flex-flow: @direction @wrap;
+	-moz-flex-flow: @direction @wrap;
+	-ms-flex-flow: @direction @wrap;
+	flex-flow: @direction @wrap;
+}
+
+// Flexbox mixins for children (items)
+
+.align-self(@align: auto) {
+  -webkit-align-self: @align;
+     -moz-align-self: @align;
+      -ms-align-self: @align;
+          align-self: @align;
+}
+
+.flex-order(@order: 0) {
+  -webkit-order: @order;
+     -moz-order: @order;
+      -ms-order: @order;
+          order: @order;
+}
+
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+          flex-grow: @grow;
+}
+
+.flex-basis(@basis: auto) {
+  -webkit-flex-basis: @basis;
+     -moz-flex-basis: @basis;
+      -ms-flex-basis: @basis;
+          flex-basis: @basis;
+}
+
+.flex(@grow, @shrink, @basis) {
+	-webkit-flex: @grow @shrink @basis;
+     -moz-flex: @grow @shrink @basis;
+      -ms-flex: @grow @shrink @basis;
+          flex: @grow @shrink @basis;
+}
+
+.bg-box-shadow(@bg-color, @offset, @letterSpacing: 0px) {
+	-webkit-box-shadow: -@offset 0 0 0 @bg-color, ~'calc(@{offset} - @{letterSpacing})' 0 0 0 @bg-color;
+	-moz-box-shadow: -@offset 0 0 0 @bg-color, ~'calc(@{offset} - @{letterSpacing})' 0 0 0 @bg-color;
+	-ms-box-shadow: -@offset 0 0 0 @bg-color, ~'calc(@{offset} - @{letterSpacing})' 0 0 0 @bg-color;
+	box-shadow: -@offset 0 0 0 @bg-color, ~'calc(@{offset} - @{letterSpacing})' 0 0 0 @bg-color;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+
+// Font scaling mixin
+
+.scale-font (@min-font-size, @max-font-size, @equilibrium-width, @container-width: 1) {
+
+  // do the math
+  @container-ratio: 100 * @container-width;
+	@vw-size: @max-font-size / (@equilibrium-width / @container-ratio);
+  //set the breakpoints
+  @lower-breakpoint: round(100 * @min-font-size / @vw-size);
+  @upper-breakpoint: round(100 * @max-font-size / @vw-size);
+
+  @media screen and (min-width: @lower-breakpoint) and (max-width: @upper-breakpoint) {
+    font-size: unit(@vw-size, vw);
+  }
+  @media screen and (max-width: @lower-breakpoint) {
+    font-size: @min-font-size;
+  }
+  @media screen and (min-width: @upper-breakpoint) {
+    font-size: @max-font-size;
+  }
+
+}

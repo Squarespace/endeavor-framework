@@ -1,0 +1,58 @@
+{.section items}
+  {.repeated section @}
+    {.collection?}
+      {.index?}
+      <div class="nav-item index{.if active} active{.end}{.section collection}{.if homepage} homepage{.end}{.end}" id="id-{collection.id}">
+        <a href="{collection.fullUrl}">
+          <span>{collection.navigationTitle}</span>
+        </a>
+      </div>
+      {.or}
+
+      {.folder?}
+        <div class="nav-item folder{.section collection}{.if homepage} homepage{.end}{.end}" id="id{collection.id}" data-controller="FolderToggle">
+          <a>{collection.navigationTitle}</a>
+          <div class="subnav">
+          {.repeated section items}
+            {.collection?}
+            <div class="collection{.if active} active{.end}" id="id-{collection.id}">
+              <a href="{collection.fullUrl}">
+                <span>{collection.navigationTitle}</span>
+              </a>
+            </div>
+            {.end}
+            {.section externalLink}
+            <div class="external">
+              <a href="{url}"{.section newWindow} target="_blank"{.end}>
+                <span>{title}</span>
+              </a>
+            </div>
+            {.end}
+          {.end}
+          </div>
+        </div>
+
+      {.or}
+
+        {.section collection}
+        <div class="nav-item collection{.if active} active{.end}{.if homepage} homepage{.end}" id="id-{id}">
+          <a href="{fullUrl}">
+            <span>{navigationTitle}</span>
+          </a>
+        </div>
+        {.end}
+
+      {.end}
+    {.end}
+    {.or}
+      {.section externalLink}
+      <div class="nav-item external">
+        <a href="{url}"{.section newWindow} target="_blank"{.end}>
+          <span>{title}</span>
+        </a>
+      </div>
+      {.end}
+
+    {.end}
+  {.end}
+{.end}

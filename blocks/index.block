@@ -1,0 +1,44 @@
+
+{.var @isIndexNav items}
+{.var @isIndexList collections}
+
+<div class="index-gallery-wrapper{.if @isIndexNav} index-item-navigation{.end}" data-controller="IndexSetup, IndexPositioning, IndexNavOverflow{.if @isIndexNav}, IndexNavScroll{.or}, IndexGallery{.end}">
+  <div class="collection-images{.if @isIndexNav} index-nav-images{.end}">
+    {.if @isIndexList}
+      {.background-source-video?}
+        <div class="image-container content-fill index-main-image" data-controller="VideoBackground">
+          {@|apply sqs-video-background.block}
+        </div>
+      {.or}
+        {.section mainImage}
+          <div class="image-container content-fill index-main-image" >
+            <img {@|image-meta} data-load="false" />
+          </div>
+        {.or}
+        <div class="image-container index-main-image no-main-image-bg"></div>
+        {.end}
+      {.end}
+    {.end}
+    {.repeated section collections}{@|apply index-collection-image.block}{.end}
+    {.repeated section items}{collection|apply index-collection-image.block}{.end}
+
+    <div class="overlay blended-overlay index-overlay"></div>
+  </div>
+
+  <div class="collection-nav-desc-wrapper">
+    {.if collection.description}
+      <div id="collectionDesc" class="collection-desc">
+        {collection.description}
+      </div>
+    {.end}
+
+    <nav class="index-navigation collection-nav" role="navigation">
+      {.repeated section collections}
+          {@|apply index-collection-nav-item.block}
+      {.end}
+      {.repeated section items}
+        {collection|apply index-collection-nav-item.block}
+      {.end}
+    </nav>
+  </div>
+</div>

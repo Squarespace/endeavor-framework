@@ -1,0 +1,3 @@
+{.equal? collection.typeName "index"}
+  {@|apply index.block}
+{.end}

@@ -1,0 +1,38 @@
+{.if showCart}
+  <a href="{shoppingCart|cart-url}" class="Cart Cart--icon {squarespace.cart-classes}" data-nc-element="cart">
+    <span class="Cart-inner">
+      <svg class="Icon Icon--bag" viewBox="0 0 34 38">
+        <g class="svg-icon bag-icon--even">
+          <path id="XMLID_2_" fill="none" stroke-miterlimit="10" d="M29,36H5c-1.7,0-3-1.6-3-3.5L4,15h26
+            l2,17.5C32,34.4,30.7,36,29,36z"/>
+          <path id="XMLID_1_" fill="none" stroke-miterlimit="10" d="M11.8,11c0-1.4,0.6-9,5.2-9s5,8.6,5,9
+            "/>
+        </g>
+
+        <g class="svg-icon bag-icon--odd">
+          <path fill="none" stroke-miterlimit="10" d="M29.4,36.5H4.6
+            c-1.7,0-3.1-1.6-3.1-3.6l2.1-18.4h26.9l2.1,18.4C32.5,34.9,31.1,36.5,29.4,36.5z"/>
+          <path fill="none" stroke-miterlimit="10" d="M11.5,11c0-1.4,0.6-9.5,5.6-9.5
+            s5.4,9.1,5.4,9.5"/>
+        </g>
+      </svg>
+      <svg class="Icon Icon--cart" viewBox="0 0 31 26">
+        <g class="svg-icon cart-icon--even">
+          <circle stroke-miterlimit="10" cx="23" cy="23" r="1"/>
+          <circle stroke-miterlimit="10" cx="9" cy="23" r="1"/>
+          <path fill="none" stroke-linejoin="round" stroke-miterlimit="10" d="M0,2h5
+              c0.6,0,1.1,0.4,1.1,1l1.7,13c0.1,0.5,0.6,1,1.1,1h15c0.5,0,1.2-0.4,1.4-0.9l3.3-8.1C28.8,7.4,28.5,7,28,7H12"/>
+        </g>
+
+        <g class="svg-icon cart-icon--odd">
+          <circle stroke-miterlimit="10" cx="22.5" cy="21.5" r="1"/>
+          <circle stroke-miterlimit="10" cx="9.5" cy="21.5" r="1"/>
+          <path fill="none" stroke-miterlimit="10" d="M0,1.5h5c0.6,0,1.1,0.4,1.1,1l1.7,13
+            c0.1,0.5,0.6,1,1.1,1h15c0.5,0,1.2-0.4,1.4-0.9l3.3-8.1c0.2-0.5-0.1-0.9-0.6-0.9H12"/>
+        </g>
+      </svg>
+
+      {shoppingCart|cart-quantity}
+    </span>
+  </a>
+{.end}

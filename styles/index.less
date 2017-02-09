@@ -1,0 +1,620 @@
+@-moz-keyframes ken-burns {
+	0% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+		-moz-animation-timing-function: ease-in-out;
+  }
+	50% {
+    .transform(scale3d(1.2, 1.2, 1.2) translate3d(-40px, -30px, 20px));
+  }
+  100% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+  }
+}
+
+@-webkit-keyframes ken-burns {
+	0% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+		-webkit-animation-timing-function: ease-in-out;
+  }
+	50% {
+    .transform(scale3d(1.2, 1.2, 1.2) translate3d(-40px, -30px, 20px));
+  }
+  100% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+  }
+}
+
+@keyframes ken-burns {
+	0% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+		animation-timing-function: ease-in-out;
+  }
+	50% {
+    .transform(scale3d(1.2, 1.2, 1.2) translate3d(-40px, -30px, 20px));
+  }
+  100% {
+    .transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+  }
+}
+
+.collection-type-index {
+	.main-content {
+		position: relative;
+		box-sizing: border-box;
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.site-footer {
+		display: none;
+	}
+}
+
+.index-gallery-wrapper {
+	position: relative;
+	height: 100vh;
+	overflow: auto;
+}
+
+.index-overlay {
+	position: fixed;
+  background-color: @tweak-index-overlay-color;
+  opacity: @tweak-index-overlay-opacity;
+
+	.transition(~'opacity 0ms 350ms ease-in-out');
+}
+
+.nav-hovered .index-overlay {
+	.transition(~'opacity 0ms 0ms ease-in-out');
+}
+
+.tweak-use-gradient-index-overlay .index-overlay {
+	background-image: linear-gradient(135deg, @tweak-index-overlay-color 0%, @tweak-index-overlay-color-2 100%);
+	background-color: transparent;
+}
+
+body:not(.tweak-index-slideshow-on).tweak-index-inactive-on-load .has-touch .index-overlay {
+	opacity: @tweak-index-overlay-opacity;
+}
+
+body:not(.tweak-index-slideshow-on).tweak-index-inactive-on-load .nav-hovered .index-overlay {
+	opacity: @tweak-index-overlay-opacity;
+	.transition(~'opacity 0ms 0ms ease-in-out');
+}
+
+.collection-nav-desc-wrapper {
+	box-sizing: border-box;
+	z-index: 12;
+	position: absolute;
+	top: 50%;
+	left: @index-menu-padding;
+	// hide until the overflow script has run to avoid content jumping.
+	opacity: 0;
+
+	.transform(translate3d(0, -50%, 0));
+	.transition(~'opacity 300ms ease');
+
+	&.show {
+		opacity: 1;
+	}
+
+	&.too-tall {
+		.transform(translate3d(0, 0, 0));
+		position: relative;
+	}
+
+	.collection-desc {
+		z-index: 12;
+		position: relative;
+		display: none;
+		height: 0;
+		opacity: 1;
+		max-width: @tweak-index-desc-max-width;
+
+		.transition(~'opacity 200ms ease-in-out');
+
+		p {
+			color: @tweak-index-desc-color;
+			.tweak-index-desc-font;
+			.scale-font(@tweak-index-desc-font-min, @tweak-index-desc-font-font-size, 1920px);
+		}
+
+		@media screen and (max-width: @tablet-width) {
+			max-width: @tweak-tablet-index-desc-max-width;
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			max-width: @tweak-mobile-index-desc-max-width;
+		}
+	}
+
+	.collection-nav {
+		z-index: 12;
+		position: relative;
+		.tweak-index-menu-font;
+		.scale-font(@tweak-index-menu-font-min, @tweak-index-menu-font-font-size, 1920px);
+
+		.collection-nav-item span {
+			z-index: 12;
+			position: relative;
+		}
+	}
+
+	.collection-nav a {
+		color: @tweak-index-menu-color;
+		margin-right: unit(@tweak-index-menu-spacing, vw);
+		position: relative;
+		pointer-events: auto;
+
+		.tweak-index-menu-font;
+		.scale-font(@tweak-index-menu-font-min, @tweak-index-menu-font-font-size, 1920px);
+		.transition(~'opacity 200ms ease-in-out, color 150ms linear');
+
+		@media screen and (max-width: @tablet-width) {
+			margin-right: unit(@tweak-tablet-index-menu-spacing, vw);
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			margin-right: unit(@tweak-mobile-index-menu-spacing, vw);
+		}
+	}
+
+	.active a {
+		color: @tweak-index-menu-hover-color;
+	}
+
+	div.index-main-image {
+		display: none;
+	}
+}
+
+.tweak-show-index-desc .collection-nav-desc-wrapper .collection-desc {
+	display: block;
+	height: auto;
+}
+
+.tweak-hide-index-desc-on-hover .hide-desc .collection-nav-desc-wrapper .collection-desc,
+.tweak-hide-index-desc-on-hover:not(.tweak-index-inactive-on-load) .collection-nav-desc-wrapper .collection-desc {
+	opacity: 0;
+}
+
+.tweak-index-menu-link-style-background {
+	.collection-nav a span {
+		background-color: @tweak-index-menu-link-background-color;
+		.bg-box-shadow(@tweak-index-menu-link-background-color, .25em, @tweak-index-menu-font-letter-spacing);
+	}
+
+	&.tweak-index-nav-position-left,
+	&.tweak-index-nav-position-bottom-left,
+	&.tweak-index-nav-layout-inline {
+		.collection-nav {
+			margin-left: .25em;
+		}
+	}
+}
+
+.tweak-index-nav-layout-stacked .collection-nav-desc-wrapper .collection-nav div:not(.index-main-image) {
+	a {
+		display: inline-block;
+		padding: unit(@tweak-index-menu-spacing/2, vw) 0;
+		margin: 0;
+
+		@media screen and (max-width: @tablet-width) {
+			padding: unit(@tweak-tablet-index-menu-spacing/2, vw) 0;
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			padding: unit(@tweak-mobile-index-menu-spacing/2, vw) 0;
+		}
+	}
+
+	&:last-child a {
+		padding-bottom: 0;
+	}
+}
+
+.collection-nav-desc-wrapper {
+	width: 100%;
+}
+
+.tweak-index-nav-position-left .collection-nav-desc-wrapper,
+.tweak-index-nav-position-bottom-left .collection-nav-desc-wrapper {
+	width: ~'calc(100% - @{index-menu-padding})';
+}
+
+.collection-nav-desc-wrapper .collection-nav {
+	width: @tweak-index-menu-max-width;
+	box-sizing: border-box;
+	padding-right: .5em;
+	padding-left: .5em;
+
+	@media screen and (max-width: @tablet-width) {
+		width: @tweak-tablet-index-menu-max-width;
+	}
+
+	@media screen and (max-width: @mobile-width) {
+		width: @tweak-mobile-index-menu-max-width;
+	}
+}
+
+.tweak-show-index-desc.tweak-index-nav-position-center.tweak-index-desc-position-middle .collection-nav-desc-wrapper .collection-desc + .collection-nav,
+.tweak-show-index-desc.tweak-index-nav-position-left.tweak-index-desc-position-middle .collection-nav-desc-wrapper .collection-desc + .collection-nav {
+	padding-top: @index-menu-desc-spacing;
+
+	@media screen and (max-width: @tablet-width) {
+		padding-top: @index-menu-desc-spacing-tablet;
+	}
+
+	@media screen and (max-width: @mobile-width) {
+		padding-top: @index-menu-desc-spacing-mobile;
+	}
+}
+
+.tweak-show-index-desc .collection-nav-desc-wrapper .collection-desc + .collection-nav {
+	padding-top: 3vw;
+}
+
+.tweak-show-index-desc.tweak-index-nav-position-left .collection-nav-desc-wrapper .collection-desc + .collection-nav,
+.tweak-show-index-desc.tweak-index-nav-position-center .collection-nav-desc-wrapper .collection-desc + .collection-nav {
+	padding-bottom: 3vw;
+}
+
+.tweak-index-nav-position-left .collection-nav-desc-wrapper .collection-nav,
+.tweak-index-nav-position-bottom-left .collection-nav-desc-wrapper .collection-nav {
+	padding-right: .5em;
+	padding-left: 0;
+}
+
+.tweak-index-nav-position-bottom-left {
+	.collection-nav-desc-wrapper {
+		top: 0;
+		left: 0;
+		position: relative;
+		height: 100%;
+
+		.transform(translate3d(0, 0, 0));
+	}
+
+	.collection-nav {
+		position: absolute;
+		top: auto;
+		left: @index-menu-padding;
+		bottom: @index-menu-padding;
+
+		.transform(translate3d(0, 0, 0));
+	}
+
+	.collection-desc {
+		position: absolute;
+		top: 50%;
+		left: @index-menu-padding;
+
+		.transform(translate3d(0, -50%, 0));
+	}
+}
+
+.tweak-index-nav-position-center,
+.tweak-index-nav-position-bottom-center {
+	.collection-nav div:not(.index-main-image) a {
+		margin-right: unit(@tweak-index-menu-spacing/2, vw);
+		margin-left: unit(@tweak-index-menu-spacing/2, vw);
+
+		@media screen and (max-width: @tablet-width) {
+			margin-right: unit(@tweak-tablet-index-menu-spacing/2, vw);
+			margin-left: unit(@tweak-tablet-index-menu-spacing/2, vw);
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			margin-right: unit(@tweak-mobile-index-menu-spacing/2, vw);
+			margin-left: unit(@tweak-mobile-index-menu-spacing/2, vw);
+		}
+	}
+}
+
+.tweak-index-nav-position-center .collection-nav-desc-wrapper {
+	width: 100%;
+	left: 0;
+	right: 0;
+	max-width: 100%;
+	text-align: center;
+
+	.collection-desc {
+		margin: 0 auto;
+		width: @tweak-index-desc-max-width;
+		max-width: none;
+
+		@media screen and (max-width: @tablet-width) {
+			width: @tweak-tablet-index-desc-max-width;
+			max-width: none;
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			width: @tweak-mobile-index-desc-max-width;
+			max-width: none;
+		}
+	}
+
+	.collection-nav {
+		margin: 0 auto;
+	}
+}
+
+.tweak-index-nav-position-bottom-center .collection-nav-desc-wrapper {
+	width: 100%;
+	top: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	max-width: 100%;
+	text-align: center;
+	position: relative;
+	height: 100%;
+
+	.transform(translate3d(0, 0, 0));
+
+	.collection-desc {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: @tweak-index-desc-max-width;
+		max-width: none;
+
+		.transform(translate3d(-50%, -50%, 0));
+
+		@media screen and (max-width: @tablet-width) {
+			width: @tweak-tablet-index-desc-max-width;
+			max-width: none;
+		}
+
+		@media screen and (max-width: @mobile-width) {
+			width: @tweak-mobile-index-desc-max-width;
+			max-width: none;
+		}
+	}
+
+	.collection-nav {
+		position: absolute;
+		top: auto;
+		left: 50%;
+		bottom: @index-menu-padding;
+
+		.transform(translate3d(-50%, 0, 0));
+	}
+}
+
+.tweak-index-desc-position-top {
+	.collection-nav-desc-wrapper {
+		top: 0;
+		left: 0;
+		position: relative;
+		height: 100%;
+
+		.transform(translate3d(0, 0, 0));
+	}
+
+	.collection-desc {
+		position: absolute;
+		top: 0;
+
+		.transform(translate3d(0, 0, 0));
+	}
+
+	&.tweak-index-nav-position-left {
+		.collection-desc {
+			left: @index-menu-padding;
+		}
+
+		.collection-nav {
+			position: absolute;
+			top: 50%;
+			left: @index-menu-padding;
+
+			.transform(translate3d(0, -50%, 0));
+		}
+
+		.too-tall .collection-nav {
+			.transform(translate3d(0, 0, 0));
+		}
+	}
+
+	&.tweak-index-nav-position-bottom-left {
+		.collection-desc {
+			left: @index-menu-padding;
+		}
+
+		.collection-nav {
+			position: absolute;
+			left: @index-menu-padding;
+			bottom: @index-menu-padding;
+
+			.transform(translate3d(0, 0, 0));
+		}
+	}
+
+	&.tweak-index-nav-position-center {
+		.collection-desc {
+			left: 50%;
+
+			.transform(translate3d(-50%, 0, 0));
+		}
+
+		.collection-nav {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			max-width: none;
+
+			.transform(translate3d(-50%, -50%, 0));
+		}
+
+		.too-tall .collection-nav {
+			.transform(translate3d(-50%, 0, 0));
+		}
+	}
+
+	&.tweak-index-nav-position-bottom-center {
+		.collection-desc {
+			left: 50%;
+			max-width: none;
+
+			.transform(translate3d(-50%, 0, 0));
+		}
+
+		.collection-nav {
+			position: absolute;
+			top: auto;
+			left: 50%;
+			bottom: @index-menu-padding;
+
+			.transform(translate3d(-50%, 0, 0));
+		}
+	}
+}
+
+.tweak-index-nav-layout-inline .collection-nav-desc-wrapper .collection-nav {
+	.display-flex(flex);
+  .flex-flow(row wrap);
+  .justify-content(flex-start);
+  .align-items(center);
+
+	div:not(.index-main-image) {
+		padding: 0;
+		margin: 0;
+
+		a {
+			padding: 0;
+		}
+	}
+}
+
+.tweak-index-nav-position-center,
+.tweak-index-nav-position-bottom-center {
+	&.tweak-index-nav-layout-inline .collection-nav-desc-wrapper .collection-nav {
+	  .justify-content(center);
+	}
+}
+
+.tweak-index-menu-link-style-underline-on-hover .collection-nav div:not(.index-main-image) {
+	a span {
+		border-bottom: solid @tweak-index-menu-link-border-size rgba(red(@tweak-index-menu-hover-color), green(@tweak-index-menu-hover-color), blue(@tweak-index-menu-hover-color), 0);
+
+		.transition(~'border-color 240ms ease-in-out');
+	}
+
+	a span:hover,
+	&.active a span {
+		border-bottom-color: rgba(red(@tweak-index-menu-hover-color), green(@tweak-index-menu-hover-color), blue(@tweak-index-menu-hover-color), alpha(@tweak-index-menu-hover-color));
+	}
+}
+
+.tweak-index-menu-link-style-strikethrough-on-hover .collection-nav div:not(.index-main-image) {
+	a span:hover,
+	&.active a span {
+		text-decoration: line-through;
+	}
+}
+
+.collection-images {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: @site-padding;
+	z-index: 1;
+
+	.image-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		&.no-main-image-bg {
+			background-color: @tweak-index-background-color;
+		}
+
+		.sqs-video-background {
+			height: 100%;
+		}
+
+		img,
+		&.no-main-image-bg,
+		.sqs-video-background {
+			opacity: 0;
+			z-index: 1;
+
+			.transition(~'opacity 300ms 0ms ease-in-out');
+		}
+
+		&.active img,
+		&.active .sqs-video-background
+		 {
+			opacity: 1;
+			z-index: 10;
+		}
+
+		&.active.no-main-image-bg {
+			opacity: 1;
+			// bring this over the image overlay so you don't get overlay over bg color
+			z-index: 13;
+		}
+	}
+}
+
+.tweak-index-slideshow-animation .collection-images .image-container img,
+.tweak-index-slideshow-animation .collection-images .image-container .sqs-video-background {
+	-moz-animation: ken-burns 30s infinite;
+	-webkit-animation: ken-burns 30s infinite;
+	animation: ken-burns 30s infinite;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+.tweak-use-gradient-index-background .collection-images .image-container.no-main-image-bg {
+	background-image: linear-gradient(135deg, @tweak-index-background-color 0%, @tweak-index-background-color-2 100%);
+	background-color: transparent;
+}
+
+body:not(.tweak-index-slideshow-on).tweak-index-inactive-on-load .collection-images {
+	background-color: @tweak-index-background-color;
+}
+
+.tweak-use-gradient-index-background:not(.tweak-index-slideshow-on).tweak-index-inactive-on-load .collection-images {
+	background-image: linear-gradient(135deg, @tweak-index-background-color 0%, @tweak-index-background-color-2 100%);
+	background-color: transparent;
+}
+
+.tweak-index-slideshow-on.tweak-index-slideshow-animation {
+	.collection-images:not(.index-nav-images) .image-container.active img {
+		-moz-animation-play-state: running;
+		-webkit-animation-play-state: running;
+		animation-play-state: running;
+	}
+
+	.animation-paused .collection-images:not(.index-nav-images) .image-container.active img {
+		-moz-animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+		animation-play-state: paused;
+	}
+}
+
+
+// Index nav on item view for collections in the index
+
+.index-item-navigation {
+  position: fixed;
+	top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	pointer-events: none;
+
+	&.scrollable {
+		pointer-events: auto;
+	}
+}

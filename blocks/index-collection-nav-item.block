@@ -1,0 +1,6 @@
+
+<div class="collection-nav-item{.if active} active active-page{.end}" data-url-id="{urlId}">
+  <a href="{fullUrl}" class="{urlId}">
+    <span class="collection-nav-item-span">{title}</span>
+  </a>
+</div>

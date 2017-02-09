@@ -1,0 +1,46 @@
+
+<div class="gallery-wrapper" data-controller="GalleryLayout">
+  <div class="slides">
+    <div class="grid-wrapper">
+      {.repeated section items}
+      <div class="grid-item-wrapper grid-hidden" data-slide-id="{id}" data-controller="GalleryVideoHandler">
+        <div class="grid-image-wrapper{.video?} video{.end}" data-slide-id="{id}">
+          <img {@|image-meta} data-load="false" data-grid-image />
+          {.if title || body}
+          <div class="image-title-desc" data-slide-id="{id}">
+            {.section title}<div class="image-title">
+              <span>{title}<span>
+            </div>{.end}
+            {.section body}<div class="image-desc">{@}</div>{.end}
+          </div>
+          <div class="info-button" data-slide-id="{id}">
+            <div class="info-button-inner">
+            </div>
+          </div>
+          {.end}
+          <div class="overlay blended-overlay image-overlay" data-slide-id="{id}">
+            {.image?}{.section clickthroughUrl}<a href="{@}" class="clickthrough"></a>{.end}{.end}
+          </div>
+          {.video?}
+          <div class="video-play-icon">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <g id="Layer_1">
+                <circle id="XMLID_14_" class="st0" cx="50" cy="50" r="48"/>
+              </g>
+              <g id="Layer_3">
+                <path id="XMLID_16_" d="M32 28v44l46-22z"/>
+              </g>
+            </svg>
+          </div>
+          {.end}
+        </div>
+        <div class="lightbox-video-wrapper">
+        {.video?}
+          {@|video}
+        {.end}
+        </div>
+      </div>
+      {.end}
+    </div>
+  </div>
+</div>

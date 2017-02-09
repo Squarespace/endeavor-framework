@@ -1,0 +1,14 @@
+{.var @urlId urlId}
+{.background-source-video?}
+  <div class="image-container content-fill{.if active} active active-page{.end}{.background-source-video?}{.or}{.main-image?}{.or} no-main-image{.end}{.end}" data-url-id="{@urlId}" data-controller="VideoBackground">
+    {@|apply sqs-video-background.block}
+  </div>
+{.or}
+  {.section mainImage}
+    <div class="image-container content-fill{.if active} active active-page{.end}{.background-source-video?}{.or}{.main-image?}{.or} no-main-image{.end}{.end}" data-url-id="{@urlId}">
+      <img {@|image-meta} data-load="false" />
+    </div>
+  {.or}
+    <div class="image-container no-main-image-bg{.if active} active active-page{.end}" data-url-id="{@urlId}"></div>
+  {.end}
+{.end}

@@ -1,0 +1,7 @@
+{.if showCart}
+<div class="nav-item cart">
+  <a href="{shoppingCart|cart-url}" class="{squarespace.cart-classes} custom-cart">
+    <span>Cart ({shoppingCart|cart-quantity})</span>
+  </a>
+</div>
+{.end}

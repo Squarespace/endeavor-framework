@@ -1,0 +1,31 @@
+.header-social-icons-with-nav .sqs-template-social-icons,
+.header-social-icons-right .sqs-template-social-icons {
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.header-social-icons-with-nav .sqs-svg-icon--list,
+.header-social-icons-right .sqs-svg-icon--list {
+  padding: 0;
+}
+
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-never:not(.swap-header-color),
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav):not(.swap-header-color), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav:not(.swap-header-color), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image):not(.swap-header-color),
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image):not(.swap-header-color),
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image):not(.swap-header-color),
+.view-item {
+  .mixin-template-social-icons-color-body(@tweak-alt-social-icon-color);
+}
+
+body:not(.collection-type-index):not(.collection-type-gallery).nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always).nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav).nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav.nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image).nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image).nav-open.mobile-style-nav,
+body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image).nav-open.mobile-style-nav,
+.nav-open.mobile-style-nav,
+.nav-open.mobile-style-nav.view-item {
+  .mixin-template-social-icons-color-body(@tweak-mobile-social-icon-color);
+}

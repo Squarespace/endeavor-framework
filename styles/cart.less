@@ -1,0 +1,246 @@
+
+@cartBaseWidth: 31px;
+@cartBaseHeight: 26px;
+
+@bagBaseWidth: 34px;
+@bagBaseHeight: 38px;
+
+.Cart--icon {
+  display: none;
+}
+
+.tweak-cart-link-display-icon-on-right .Cart--icon {
+  .display-flex(flex);
+}
+
+.mixin-cart (@option, @cart-color, @flag-color, @flag-text-color) {
+  position: relative;
+  white-space: nowrap;
+  line-height: 1em;
+  margin-left: @header-element-spacing;
+
+  .flex(0, 1, auto);
+  .flex-order(5);
+
+  @media screen and (max-width: @tablet-width) {
+		margin-left: @header-element-spacing-tablet;
+	}
+
+	@media screen and (max-width: @mobile-width) {
+		margin-left: @header-element-spacing-mobile;
+	}
+
+  .Cart-inner {
+    display: block;
+    position: relative;
+  }
+
+  .Icon--cart,
+  .Icon--bag {
+    display: none;
+  }
+
+  .sqs-cart-quantity {
+    .tweak-cart-icon-font;
+    font-size: 10px;
+  }
+}
+
+.mixin-cart (@option, @cart-color, @flag-color, @flag-text-color) when (@option = cart) {
+  fill: @cart-color; // for the wheels
+  stroke: @cart-color;
+
+  .Cart-inner {
+    padding-top: 10px;
+    padding-right: 10px;
+  }
+
+  .Icon--cart {
+    display: block;
+  }
+
+  .sqs-cart-quantity {
+    display: block;
+    vertical-align: top;
+    min-width: 1em;
+    border-radius: 50%;
+    padding: 0.5em;
+    background-color: @flag-color;
+    color: @flag-text-color;
+    text-align: center;
+    line-height: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.mixin-cart (@option, @cart-color, @flag-color, @flag-text-color) when (@option = bag) {
+  stroke: @cart-color;
+
+  .Icon--bag {
+    display: block;
+  }
+
+  .sqs-cart-quantity {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: @cart-color;
+  }
+}
+
+.tweak-cart-icon-style-cart .Cart--icon {
+  .mixin-cart(cart, @tweak-cart-icon-color, @tweak-cart-icon-flag-color, @tweak-cart-icon-flag-text-color);
+}
+
+.tweak-cart-icon-style-bag .Cart--icon {
+  .mixin-cart(bag, @tweak-cart-icon-color, @tweak-cart-icon-flag-color, @tweak-cart-icon-flag-text-color);
+}
+
+.tweak-cart-icon-style-cart {
+  .Icon--cart {
+    width: @cartBaseWidth;
+    height: @cartBaseHeight;
+  }
+
+  &.tweak-cart-icon-weight-hairline .Icon--cart {
+    stroke-width: 1;
+    .cart-icon--even { display: none; }
+  }
+
+  &.tweak-cart-icon-weight-light .Icon--cart {
+    stroke-width: 2;
+    .cart-icon--odd { display: none; }
+  }
+
+  &.tweak-cart-icon-weight-medium .Icon--cart {
+    stroke-width: 3;
+    .cart-icon--even { display: none; }
+  }
+
+  &.tweak-cart-icon-weight-heavy .Icon--cart {
+    stroke-width: 4;
+    .cart-icon--odd { display: none; }
+  }
+
+  &.tweak-cart-icon-size-extra-small {
+    .Icon--cart {
+      width: @cartBaseWidth * .75;
+      height: @cartBaseHeight * .75;
+    }
+
+    .sqs-cart-quantity {
+      font-size: 9px;
+    }
+  }
+
+  &.tweak-cart-icon-size-small {
+    .Icon--cart {
+      width: @cartBaseWidth * .875;
+      height: @cartBaseHeight * .875;
+    }
+
+    .sqs-cart-quantity {
+      font-size: 9px;
+    }
+  }
+
+  &.tweak-cart-icon-size-large {
+    .Icon--cart {
+      width: @cartBaseWidth * 1.125;
+      height: @cartBaseHeight * 1.125;
+    }
+  }
+
+  &.tweak-cart-icon-size-extra-large {
+    .Icon--cart {
+      width: @cartBaseWidth * 1.25;
+      height: @cartBaseHeight * 1.25;
+    }
+  }
+}
+
+.tweak-cart-icon-style-bag {
+  .Icon--bag {
+    width: @bagBaseWidth;
+    height: @bagBaseHeight;
+  }
+
+  &.tweak-cart-icon-weight-hairline .Icon--bag {
+    stroke-width: 1;
+    .bag-icon--even {
+      display: none;
+    }
+  }
+
+  &.tweak-cart-icon-weight-light .Icon--bag {
+    stroke-width: 2;
+    .bag-icon--odd {
+      display: none;
+    }
+  }
+
+  &.tweak-cart-icon-weight-medium .Icon--bag {
+    stroke-width: 3;
+    .bag-icon--even {
+      display: none;
+    }
+  }
+
+  &.tweak-cart-icon-weight-heavy .Icon--bag {
+    stroke-width: 4;
+    .bag-icon--odd {
+      display: none;
+    }
+  }
+
+  // base size is used for -large here since the svg is larger by default
+  &.tweak-cart-icon-size-extra-small {
+    .Icon--bag {
+      width: @bagBaseWidth * .625;
+      height: @bagBaseHeight * .625;
+    }
+
+    .sqs-cart-quantity {
+      bottom: 3px;
+      font-size: 8px;
+    }
+  }
+
+  &.tweak-cart-icon-size-small {
+    .Icon--bag {
+      width: @bagBaseWidth * .75;
+      height: @bagBaseHeight * .75;
+    }
+
+    .sqs-cart-quantity {
+      bottom: 4px;
+      font-size: 9px;
+    }
+  }
+
+  &.tweak-cart-icon-size-medium {
+    .Icon--bag {
+      width: @bagBaseWidth * .875;
+      height: @bagBaseHeight * .875;
+    }
+
+    .sqs-cart-quantity {
+      bottom: 6px;
+    }
+  }
+
+  &.tweak-cart-icon-size-extra-large {
+    .Icon--bag {
+      width: @bagBaseWidth * 1.125;
+      height: @bagBaseHeight * 1.125;
+    }
+
+    .sqs-cart-quantity {
+      bottom: 10px;
+    }
+  }
+}

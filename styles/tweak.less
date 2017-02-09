@@ -1,0 +1,829 @@
+// ///////////////////////////////////////////////////////////////
+// SITE //////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Site", "title": "tweak-site-ajax-loading-enable", "label": "Enable Ajax Loading", "type": "checkbox", "active": true, "target": ".main-content-inner-wrapper", "js": true }
+
+// tweak: { "category": "Site", "title": "tweak-site-bg-color", "label": "Site Background Color", "type": "color", "target": ".main-content-inner-wrapper" }
+@tweak-site-bg-color: #ffffff;
+
+// tweak: { "category": "Site", "type": "value", "title": "tweak-site-outer-padding", "label": "Outer Padding", "min": 0, "max": 20, "target": ".main-content-inner-wrapper", "js": true }
+@tweak-site-outer-padding: 0;
+
+// tweak: { "category": "Site", "type": "value", "title": "tweak-top-bottom-content-padding", "label": "Top/Bottom Content Padding", "min": 0, "max": 20, "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery)", "target": ".main-content-inner-wrapper" }
+@tweak-top-bottom-content-padding: 6;
+
+// tweak: { "category": "Site", "type": "value", "title": "tweak-left-right-content-padding", "label": "Left/Right Content Padding", "min": 0, "max": 20, "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery)", "target": ".main-content-inner-wrapper" }
+@tweak-left-right-content-padding: 6;
+
+// tweak: { "category": "Site", "type": "value", "title": "tweak-site-content-max-width", "label": "Content Max Width", "min": 600, "max": 2000, "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery)", "target": ".main-content-inner-wrapper" }
+@tweak-site-content-max-width: 900px;
+
+
+
+
+// ///////////////////////////////////////////////////////////////
+// HEADER ////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Header", "type": "value", "title": "tweak-header-outer-padding", "label": "Outer Padding", "min": 0, "max": 20, "target": ".site-header", "js": true }
+@tweak-header-outer-padding: 2;
+
+// tweak: { "category": "Header", "type": "value", "title": "tweak-header-element-spacing", "label": "Element Spacing", "min": 0, "max": 10, "step": 0.1, "target": ".site-header", "js": true }
+@tweak-header-element-spacing: 1;
+
+// tweak: { "category": "Header", "title": "tweak-display-social-icons", "label": "Display Social Icons", "type": "checkbox", "active": false, "target": ".site-header .nav-social-wrapper", "js": true }
+
+// tweak: { "category": "Header", "title": "tweak-social-icons-on-right", "label": "Social Icons on Right", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".tweak-display-social-icons:not(.tweak-nav-position-right):not(.tweak-nav-style-standard)", "target": ".site-header .nav-social-wrapper", "js": true }
+
+
+// SHOPPING CART //////////////////////////////////////////////////
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-link-display", "label": "Cart Link Display", "type": "dropdown", "options": [ "With Nav", "Icon on Right", "Hide" ], "default": "With Nav", "showOnlyWhenPresent": ".sqs-custom-cart", "target": ".site-header, .site-header .nav-social-wrapper, .site-header .Cart--icon", "js": true }
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-style", "label": "Cart Icon Style", "type": "dropdown", "options": [ "Cart", "Bag" ], "default": "Cart", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-color", "label": "Cart Icon Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+@tweak-cart-icon-color: #eeeeee;
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-flag-color", "label": "Quantity Background Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right.tweak-cart-icon-style-cart .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+@tweak-cart-icon-flag-color: #aaaaaa;
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-flag-text-color", "label": "Quantity Text Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right.tweak-cart-icon-style-cart .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+@tweak-cart-icon-flag-text-color: #ffffff;
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-font", "label": "Quantity Font", "type": "font", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon", "loadAllVariants": false }
+.tweak-cart-icon-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-weight", "label": "Cart Icon Weight", "type": "dropdown", "options": [ "Hairline", "Light", "Medium", "Heavy" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-size", "label": "Cart Icon Size", "type": "dropdown", "options": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+
+
+
+
+// ///////////////////////////////////////////////////////////////
+// FOOTER ////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Footer", "title": "tweak-show-footer", "label": "Show Footer", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".site-footer", "target": ".main-content-inner-wrapper, .site-footer" }
+
+// tweak: { "category": "Footer", "type": "value", "title": "tweak-footer-outer-padding", "label": "Outer Padding", "min": 0, "max": 20, "showOnlyWhenPresent": ".tweak-show-footer .site-footer", "target": ".site-footer" }
+@tweak-footer-outer-padding: 2;
+
+
+
+
+// ///////////////////////////////////////////////////////////////
+// BRANDING //////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Branding", "title": "tweak-site-title-font", "label": "Site Title Font", "type": "font", "showOnlyWhenPresent": ".site-title", "target": ".site-header h1.site-title", "loadAllVariants": false }
+.tweak-site-title-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category": "Branding", "type": "value", "title": "tweak-site-title-font-min", "label": "Site Title Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".site-title", "target": ".site-header h1.site-title" }
+@tweak-site-title-font-min: 24px;
+
+// tweak: { "category": "Branding", "title": "tweak-site-title-color", "label": "Site Title Color", "type": "color", "showOnlyWhenPresent": ".collection-type-index .site-title, .collection-type-gallery .site-title, .tweak-show-page-banner-image-always.has-main-image:not(.view-item) .site-title, .tweak-show-page-banner-image-in-index.has-index-nav.has-main-image:not(.view-item) .site-title, .tweak-show-page-banner-image-not-in-index:not(.has-index-nav).has-main-image:not(.view-item) .site-title", "target": ".site-header h1.site-title" }
+@tweak-site-title-color: #eeeeee;
+
+// tweak: { "category": "Branding", "title": "tweak-alt-site-title-color", "label": "Site Title Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery) .site-title, body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always) .site-title, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav) .site-title, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav .site-title, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image) .site-title, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image) .site-title, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image) .site-title, .view-item .site-title", "target": ".site-header h1.site-title" }
+@tweak-alt-site-title-color: #222222;
+
+// tweak: { "category": "Branding", "title": "tweak-site-title-background", "label": "Site Title Background", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".site-title", "target": ".site-header h1.site-title" }
+
+// tweak: { "category": "Branding", "title": "tweak-site-title-background-color", "label": "Site Title Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-site-title-background .site-title", "target": ".site-header h1.site-title" }
+@tweak-site-title-background-color: #222222;
+
+// tweak: { "category": "Branding", "title": "tweak-site-tagline-font", "label": "Tagline Font", "type": "font", "showOnlyWhenPresent": ".site-tagline", "target": ".site-header .site-tagline", "loadAllVariants": false }
+.tweak-site-tagline-font {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+// tweak: { "category": "Branding", "type": "value", "title": "tweak-site-tagline-font-min", "label": "Tagline Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".site-tagline", "target": ".site-header .site-tagline" }
+@tweak-site-tagline-font-min: 15px;
+
+// tweak: { "category": "Branding", "title": "tweak-site-tagline-color", "label": "Tagline Color", "type": "color", "showOnlyWhenPresent": ".collection-type-index .site-tagline, .collection-type-gallery .site-tagline, .tweak-show-page-banner-image-always.has-main-image:not(.view-item) .site-tagline, .tweak-show-page-banner-image-in-index.has-index-nav.has-main-image:not(.view-item) .site-tagline, .tweak-show-page-banner-image-not-in-index:not(.has-index-nav).has-main-image:not(.view-item) .site-tagline", "target": ".site-header .site-tagline" }
+@tweak-site-tagline-color: #eeeeee;
+
+// tweak: { "category": "Branding", "title": "tweak-alt-site-tagline-color", "label": "Tagline Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery) .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always) .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav) .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image) .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image) .site-tagline, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image) .site-tagline, .view-item .site-tagline", "target": ".site-header .site-tagline" }
+@tweak-alt-site-tagline-color: #222222;
+
+// tweak: { "category": "Branding", "title": "tweak-logo-height", "label": "Logo Height", "type": "value", "min": "10", "max": "150", "showOnlyWhenPresent": ".site-branding h1.image", "target": ".site-header .site-branding h1.image", "step": "1" }
+@tweak-logo-height: 60px;
+
+// tweak: { "category": "Branding", "title": "tweak-tablet-logo-height", "label": "Tablet: Logo Height", "type": "value", "min": "10", "max": "150", "showOnlyWhenPresent": ".site-branding h1.image", "target": ".site-header .site-branding h1.image", "step": "1" }
+@tweak-tablet-logo-height: 40px;
+
+// tweak: { "category": "Branding", "title": "tweak-mobile-logo-height", "label": "Mobile: Logo Height", "type": "value", "min": "10", "max": "150", "showOnlyWhenPresent": ".site-branding h1.image", "target": ".site-header .site-branding h1.image", "step": "1" }
+@tweak-mobile-logo-height: 25px;
+
+
+
+// ///////////////////////////////////////////////////////////////
+// NAVIGATION ////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Site Navigation Options", "title": "tweak-nav-style", "label": "Nav Style", "type": "dropdown", "options": [ "Icon", "Standard" ], "default": "Icon", "target": ".site-header .nav-social-wrapper, .site-header .nav-toggle", "js": true }
+
+// tweak: { "category": "Site Navigation Options", "type": "value", "title": "tweak-nav-link-spacing", "label": "Nav Link Spacing", "min": 0, "max": 10, "step": 0.1, "target": ".site-header .nav-social-wrapper, .site-header .nav-toggle" }
+@tweak-nav-link-spacing: 0.5;
+
+// tweak: { "category": "Site Navigation Options", "title": "tweak-nav-position", "label": "Nav Position", "type": "dropdown", "options": [ "Left", "Right" ], "default": "Left", "target": ".site-header .nav-social-wrapper, .site-header .nav-toggle", "js": true }
+
+// tweak: { "category": "Site Navigation Options", "title": "tweak-menu-icon-weight", "label": "Menu Icon Weight", "type": "dropdown", "options": [ "Hairline", "Light", "Medium", "Heavy" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-nav-style-icon", "target": ".site-header .nav-toggle" }
+
+// tweak: { "category": "Site Navigation Options", "title": "tweak-menu-icon-size", "label": "Menu Icon Size", "type": "dropdown", "options": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-nav-style-icon", "target": ".site-header .nav-toggle" }
+
+
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-nav-font", "label": "Font", "type": "font", "target": ".site-header .nav-social-wrapper", "loadAllVariants": false }
+.tweak-nav-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category": "Site Navigation Typography", "type": "value", "title": "tweak-nav-font-min", "label": "Font Min", "step": 1, "min": 8, "max": 72, "target": ".site-header .nav-social-wrapper" }
+@tweak-nav-font-min: 15px;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-nav-link-color", "label": "Link Color", "type": "color", "showOnlyWhenPresent": ".collection-type-index, .collection-type-gallery, .tweak-show-page-banner-image-always.has-main-image:not(.view-item), .tweak-show-page-banner-image-in-index.has-index-nav.has-main-image:not(.view-item), .tweak-show-page-banner-image-not-in-index:not(.has-index-nav).has-main-image:not(.view-item)", "target": ".site-header .nav-social-wrapper" }
+@tweak-nav-link-color: #eeeeee;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-alt-nav-link-color", "label": "Link Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery), body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image), .view-item", "target": ".site-header .nav-social-wrapper" }
+@tweak-alt-nav-link-color: #222222;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-nav-link-style", "label": "Nav Link Style", "type": "dropdown", "options": ["Background", "Underline on Hover", "Strikethrough on Hover", "None"], "default": "None", "target": ".site-header .nav-social-wrapper" }
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-nav-link-background-color", "label": "Nav Link Background Color", "type": "color", "disableTransparency": true, "disableTransparency": true, "showOnlyWhenPresent": ".tweak-nav-link-style-background", "target": ".site-header .nav-social-wrapper" }
+@tweak-nav-link-background-color: #fff;
+
+// tweak: { "category": "Site Navigation Typography", "type": "value", "title": "tweak-nav-link-border-size", "label": "Nav Link Underline Weight", "step": 1, "min": 1, "max": 24, "showOnlyWhenPresent": ".tweak-nav-link-style-underline-on-hover", "target": ".site-header .nav-social-wrapper" }
+@tweak-nav-link-border-size: 1px;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-nav-active-link-color", "label": "Active Link Color", "type": "color", "showOnlyWhenPresent": ".collection-type-index, .collection-type-gallery, .tweak-show-page-banner-image-always.has-main-image:not(.view-item), .tweak-show-page-banner-image-in-index.has-index-nav.has-main-image:not(.view-item), .tweak-show-page-banner-image-not-in-index:not(.has-index-nav).has-main-image:not(.view-item)", "target": ".site-header .nav-social-wrapper" }
+@tweak-nav-active-link-color: #333333;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-alt-nav-active-link-color", "label": "Active Link Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery), body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image), .view-item", "target": ".site-header .nav-social-wrapper" }
+@tweak-alt-nav-active-link-color: #dddddd;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-menu-icon-color", "label": "Menu Icon Color", "type": "color", "showOnlyWhenPresent": ".collection-type-index, .collection-type-gallery, .tweak-show-page-banner-image-always.has-main-image:not(.view-item), .tweak-show-page-banner-image-in-index.has-index-nav.has-main-image:not(.view-item), .tweak-show-page-banner-image-not-in-index:not(.has-index-nav).has-main-image:not(.view-item)", "target": ".site-header .nav-toggle" }
+@tweak-menu-icon-color: #eeeeee;
+
+// tweak: { "category": "Site Navigation Typography", "title": "tweak-alt-menu-icon-color", "label": "Menu Icon Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery), body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image), body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image), .view-item", "target": ".site-header .nav-toggle" }
+@tweak-alt-menu-icon-color: #222222;
+
+
+
+// ///////////////////////////////////////////////////////////////
+// OVERLAY NAVIGATION ////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-nav-bg-color", "label": "Background Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-bg-color: #333333;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-site-title-color", "label": "Site Title Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-site-title-color: #eeeeee;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-site-tagline-color", "label": "Tagline Color", "type": "color", "showOnlyWhenPresent": ".tweak-mobile-nav-always-show-tagline .site-tagline--overlay", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-site-tagline-color: #eeeeee;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-menu-icon-color", "label": "Icon Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-menu-icon-color: #eeeeee;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-nav-link-color", "label": "Link Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-link-color: #eeeeee;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-nav-active-link-color", "label": "Active Link Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-active-link-color: #ffffff;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-social-icon-color", "label": "Social Icons Color", "type": "color", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-social-icon-color: #eeeeee;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-nav-alignment", "label": "Nav Overlay Alignment", "type": "dropdown", "options": [ "With Icon", "Center" ], "default": "With Icon", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+
+// tweak: { "category": "Navigation Overlay", "type": "value", "title": "tweak-mobile-nav-font-min", "label": "Font Min", "min": 8, "max": 72, "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-font-min: 18px;
+
+// tweak: { "category": "Navigation Overlay", "type": "value", "title": "tweak-mobile-nav-element-spacing", "label": "Element Spacing", "min": 0, "max": 10, "step": 0.1, "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-element-spacing: 2;
+
+// tweak: { "category": "Navigation Overlay", "type": "value", "title": "tweak-mobile-nav-link-spacing", "label": "Link Spacing", "min": 0, "max": 10, "step": 0.1, "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-nav-link-spacing: 1;
+
+// tweak: { "category": "Navigation Overlay", "title": "tweak-mobile-nav-always-show-tagline", "label": "Always Show Tagline", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".site-tagline--overlay", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+
+// tweak: { "category": "Navigation Overlay", "type": "value", "title": "tweak-mobile-tagline-font-min", "label": "Nav Overlay Tagline Font Size", "min": 8, "max": 72, "showOnlyWhenPresent": ".tweak-mobile-nav-always-show-tagline .site-tagline--overlay", "target": ".nav-open.mobile-style-nav .overlay-nav-wrapper" }
+@tweak-mobile-tagline-font-min: 18px;
+
+
+
+// ///////////////////////////////////////////////////////////////
+// HEADER SOCIAL ICONS ///////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Social Icons", "title": "tweak-alt-social-icon-color", "label": "Alternate Color", "type": "color", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery) .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery):not(.tweak-show-page-banner-image-always) .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index:not(.has-index-nav) .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index.has-index-nav .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-always:not(.has-main-image) .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-in-index.has-index-nav:not(.has-main-image) .sqs-svg-icon--list, body:not(.collection-type-index):not(.collection-type-gallery).tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.has-main-image) .sqs-svg-icon--list, .view-item .sqs-svg-icon--list", "target": ".sqs-svg-icon--list" }
+@tweak-alt-social-icon-color: #222222;
+
+
+
+// ///////////////////////////////////////////////////////////////
+// PAGE BANNERS //////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category": "Page Overlay", "title": "tweak-show-page-title-overlay", "label": "Show Page Overlay", "type": "dropdown", "options": ["Always", "In Index", "Not in Index", "Never"], "default": "In Index", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper", "js": true }
+
+// tweak: { "category": "Page Overlay", "title": "tweak-page-title-overlay-color", "label": "Overlay Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper" }
+@tweak-page-title-overlay-color: #000000;
+
+// tweak: { "category": "Page Overlay", "title": "tweak-use-gradient-page-title-overlay", "label": "Use Gradient for Overlay", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper" }
+
+// tweak: { "category": "Page Overlay", "title": "tweak-page-title-overlay-color-2", "label": "Overlay Color 2", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-use-gradient-page-title-overlay:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-use-gradient-page-title-overlay:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-use-gradient-page-title-overlay:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper" }
+@tweak-page-title-overlay-color-2: #7c6922;
+
+// tweak: { "category": "Page Overlay", "title": "tweak-page-title-overlay-blend-mode", "label": "Overlay Blend Mode (no IE support)", "type": "dropdown", "options": ["Normal", "Multiply", "Screen", "Overlay"], "default": "Multiply", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper" }
+
+// tweak: { "category": "Page Overlay", "title": "tweak-page-title-overlay-opacity", "label": "Overlay Opacity", "type": "value", "min": "0", "max": "1.0", "step": "0.1", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper" }
+@tweak-page-title-overlay-opacity: 0.5;
+
+
+
+
+
+// tweak: { "category": "Page Overlay Options", "title": "tweak-page-title-position", "label": "Page Title/Desc Position", "type": "dropdown", "options": ["Top Left", "Top Center", "Left", "Center", "Bottom Left", "Bottom Center"], "default": "Center", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title", "js": true }
+
+// tweak: { "category": "Page Overlay Options", "title": "tweak-show-page-title", "label": "Show Page Title", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-page-title-padding", "label": "Page Title/Desc Padding", "min": 0, "max": 20, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-page-title-position-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-page-title-position-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-page-title-position-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-always.tweak-page-title-position-bottom-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-page-title-position-bottom-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-page-title-position-bottom-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-always.tweak-page-title-position-top-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-page-title-position-top-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-page-title-position-top-left:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-always.tweak-page-title-position-top-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-page-title-position-top-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-page-title-position-top-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-always.tweak-page-title-position-bottom-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-page-title-position-bottom-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-page-title-position-bottom-center:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-page-title-padding: 5;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-page-title-max-width", "label": "Page Title Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-page-title-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-tablet-page-title-max-width", "label": "Tablet: Page Title Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-tablet-page-title-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-mobile-page-title-max-width", "label": "Mobile: Page Title Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-mobile-page-title-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "title": "tweak-show-page-desc", "label": "Show Page Description", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-page-desc-max-width", "label": "Page Desc Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-page-desc-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-tablet-page-desc-max-width", "label": "Tablet: Page Desc Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-tablet-page-desc-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-mobile-page-desc-max-width", "label": "Mobile: Page Desc Max Width", "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-mobile-page-desc-max-width: 70%;
+
+// tweak: { "category": "Page Overlay Options", "type": "value", "title": "tweak-page-title-desc-spacing", "label": "Page Title/Desc Spacing", "min": 0, "max": 10, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-page-title-desc-spacing: 2;
+
+
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-title-font", "label": "Title Font", "type": "font", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title", "loadAllVariants": false }
+.tweak-page-title-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 72px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+// tweak: { "category": "Page Overlay Typography", "type": "value", "title": "tweak-page-title-font-min", "label": "Title Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-page-title-font-min: 24px;
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-title-color", "label": "Title Color", "type": "color", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-page-title-color: #ffffff;
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-title-background", "label": "Page Title Background", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-title-background-color", "label": "Page Title Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-title.tweak-page-title-background:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-title.tweak-page-title-background:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-title.tweak-page-title-background:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper h1.page-title" }
+@tweak-page-title-background-color: #222222;
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-desc-font", "label": "Description Font", "type": "font", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc", "loadAllVariants": false }
+.tweak-page-desc-font {
+	font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  line-height: 1.4em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+// tweak: { "category": "Page Overlay Typography", "type": "value", "title": "tweak-page-desc-font-min", "label": "Desc Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-page-desc-font-min: 24px;
+
+// tweak: { "category": "Page Overlay Typography", "title": "tweak-page-desc-color", "label": "Description Color", "type": "color", "showOnlyWhenPresent": ".tweak-show-page-title-overlay-always.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-in-index.has-index-nav.tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-title-overlay-not-in-index:not(.has-index-nav).tweak-show-page-desc:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".title-desc-inner-wrapper .page-desc" }
+@tweak-page-desc-color: #ffffff;
+
+
+
+
+
+// tweak: { "category": "Page Banner Image Options", "title": "tweak-show-page-banner-image", "label": "Show Page Banner Image", "type": "dropdown", "options": ["Always", "In Index", "Not in Index", "Never"], "default": "In Index", "showOnlyWhenPresent": "body:not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".page-banner-wrapper" }
+
+// tweak: { "category": "Page Banner Image Options", "type": "value", "title": "tweak-page-banner-image-height", "label": "Page Banner Image Height", "min": 10, "max": 100, "showOnlyWhenPresent": ".tweak-show-page-banner-image-always:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-banner-image-in-index.has-index-nav:not(.collection-type-index):not(.collection-type-gallery):not(.view-item), .tweak-show-page-banner-image-not-in-index:not(.has-index-nav):not(.collection-type-index):not(.collection-type-gallery):not(.view-item)", "target": ".page-banner-wrapper" }
+@tweak-page-banner-image-height: 33;
+
+
+
+
+// ///////////////////////////////////////////////////////////////
+// TYPOGRAPHY ////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "type": "value", "category": "Site-Wide Fonts", "title": "tweak-paragraph-margin", "label": "Paragraph Margin", "step": 1, "min": 0, "max": 10, "target": ".sqs-block-html p, .title-desc-inner-wrapper .page-desc, .image-desc" }
+@tweak-paragraph-margin: 1.5em;
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-h1-font", "label": "Heading 1", "type": "font", "target": "h1:not(.entry-title):not(.product-title):not(.eventlist-title):not(.site-title):not(.page-title)", "loadAllVariants": true }
+.tweak-h1-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+// tweak: { "type": "value", "category": "Site-Wide Fonts", "title": "tweak-h1-font-min", "label": "Heading 1 Min", "step": 1, "min": 8, "max": 72, "target": "h1:not(.entry-title):not(.product-title):not(.eventlist-title):not(.site-title):not(.page-title)" }
+@tweak-h1-font-min: 20px;
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-h2-font", "label": "Heading 2", "type": "font", "target": "h2:not(.entry-title):not(.blog-item-pagination-title):not(.newsletter-form-header-title):not(.site-tagline), *:not(.promo--newsletter) .newsletter-form-header-title", "loadAllVariants": true }
+.tweak-h2-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+// tweak: { "type": "value", "category": "Site-Wide Fonts", "title": "tweak-h2-font-min", "label": "Heading 2 Min", "step": 1, "min": 8, "max": 72, "target": "h2:not(.entry-title):not(.blog-item-pagination-title):not(.newsletter-form-header-title):not(.site-tagline), *:not(.promo--newsletter) .newsletter-form-header-title" }
+@tweak-h2-font-min: 16px;
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-h3-font", "label": "Heading 3", "type": "font", "target": "h3", "loadAllVariants": true }
+.tweak-h3-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+// tweak: { "type": "value", "category": "Site-Wide Fonts", "title": "tweak-h3-font-min", "label": "Heading 3 Min", "step": 1, "min": 8, "max": 72, "target": "h3" }
+@tweak-h3-font-min: 13px;
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-body-font", "label": "Body Font", "type": "font", "target": ".sqs-block-html p", "loadAllVariants": true }
+.tweak-body-font {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.5em;
+}
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-quote-font", "label": "Quote Font", "type": "font", "showOnlyWhenPresent": ".sqs-block-quote", "target": ".sqs-block-quote", "loadAllVariants": true }
+.tweak-quote-font {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  text-decoration: none;
+  text-transform: none;
+}
+
+// tweak: { "type": "value", "category": "Site-Wide Fonts", "title": "tweak-quote-font-min", "label": "Quote Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".sqs-block-quote", "target": ".sqs-block-quote" }
+@tweak-quote-font-min: 16px;
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-label-font", "label": "Label Font", "type": "font", "showOnlyWhenPresent": "#productNav, .variant-option-title, .ss-social-button, .quantity-label, .eventitem-backlink, .event-meta-addtocalendar-container, .event-meta-socialicon-container, .eventlist-filter, .eventlist-actions, .eventitem-pager-date", "target": "#productNav, .variant-option-title, .ss-social-button, .quantity-label, .eventitem-backlink, .event-meta-addtocalendar-container, .event-meta-socialicon-container, .eventlist-filter, .eventlist-actions, .eventitem-pager-date" }
+.tweak-label-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-meta-font", "label": "Meta Font", "type": "font", "showOnlyWhenPresent": ".eventlist-cats, .eventlist-meta, .eventitem-meta:not(.event-meta-socialicon-container):not(.event-meta-addtocalendar-container), .sqs-audio-playlist .artist, .sqs-block-summary-v2 .summary-metadata-item", "target": ".eventlist-cats, .eventlist-meta, .eventitem-meta:not(.event-meta-socialicon-container):not(.event-meta-addtocalendar-container), .sqs-audio-playlist .artist, .sqs-block-summary-v2 .summary-metadata-item" }
+.tweak-meta-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+// tweak: { "category": "Site-Wide Fonts", "title": "tweak-excerpt-font", "label": "Excerpt Font", "type": "font", "showOnlyWhenPresent": ".product-excerpt, .eventlist-excerpt p, .sqs-audio-playlist .album-description, .sqs-search-page .sqs-content, .sqs-block-summary-v2 .summmary-excerpt, .sqs-block-summary-v2 .summary-read-more-link", "target": ".product-excerpt, .eventlist-excerpt p, .sqs-audio-playlist .album-description, .sqs-search-page .sqs-content, .sqs-block-summary-v2 .summmary-excerpt, .sqs-block-summary-v2 .summary-read-more-link" }
+.tweak-excerpt-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 1.5em;
+  text-transform: none;
+}
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-h1-color", "label": "Heading 1 Color", "type": "color", "target": "h1:not(.entry-title):not(.product-title):not(.eventlist-title):not(.site-title):not(.page-title)" }
+@tweak-h1-color: #333333;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-h2-color", "label": "Heading 2 Color", "type": "color", "target": "h2:not(.entry-title):not(.blog-item-pagination-title):not(.newsletter-form-header-title):not(.site-tagline), *:not(.promo--newsletter) .newsletter-form-header-title" }
+@tweak-h2-color: #333333;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-h3-color", "label": "Heading 3 Color", "type": "color", "target": "h3" }
+@tweak-h3-color: #333333;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-body-color", "label": "Body Color", "type": "color", "target": ".sqs-block-html p" }
+@tweak-body-color: #16161d;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-body-link-color", "label": "Body Link Color", "type": "color", "target": ".sqs-block-html a" }
+@tweak-link-color: #30cef5;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-quote-color", "label": "Quote Color", "type": "color", "showOnlyWhenPresent": ".sqs-block-quote", "target": ".sqs-block-quote" }
+@tweak-quote-color: #bbbbbb;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-label-color", "label": "Label Color", "type": "color", "showOnlyWhenPresent": "#productNav, .ss-social-button, .variant-option-title, .quantity-label, .eventitem-backlink, .event-meta-addtocalendar-container, .event-meta-socialicon-container, .eventlist-filter, .eventlist-actions, .eventitem-pager-date", "target": "#productNav, .ss-social-button, .variant-option-title, .quantity-label, .eventitem-backlink, .event-meta-addtocalendar-container, .event-meta-socialicon-container, .eventlist-filter, .eventlist-actions, .eventitem-pager-date" }
+@tweak-label-color: #999999;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-meta-color", "label": "Meta Color", "type": "color", "showOnlyWhenPresent": ".eventlist-cats, .eventlist-meta, .eventitem-meta:not(.event-meta-socialicon-container):not(.event-meta-addtocalendar-container), .sqs-audio-playlist .artist, .sqs-block-summary-v2 .summary-metadata-item", "target": ".eventlist-cats, .eventlist-meta, .eventitem-meta:not(.event-meta-socialicon-container):not(.event-meta-addtocalendar-container), .sqs-audio-playlist .artist, .sqs-block-summary-v2 .summary-metadata-item" }
+@tweak-meta-color: #999999;
+
+// tweak: { "category": "Site-Wide Font Colors", "title": "tweak-excerpt-color", "label": "Excerpt Color", "type": "color", "showOnlyWhenPresent": ".product-excerpt, .eventlist-excerpt p, .sqs-audio-playlist .album-description, .sqs-search-page .sqs-content, .sqs-block-summary-v2 .summmary-excerpt, .sqs-block-summary-v2 .summary-read-more-link", "target": ".product-excerpt, .eventlist-excerpt p, .sqs-audio-playlist .album-description, .sqs-search-page .sqs-content, .sqs-block-summary-v2 .summmary-excerpt, .sqs-block-summary-v2 .summary-read-more-link" }
+@tweak-excerpt-color: #999999;
+
+
+
+// ///////////////////////////////////////////////////////////////
+// INDEX /////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// COLORS /////
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-background-color", "label": "Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+@tweak-index-background-color: #000000;
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-use-gradient-index-background", "label": "Use Gradient for Background", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-background-color-2", "label": "Background Color 2", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-index.tweak-use-gradient-index-background, .tweak-use-gradient-index-background.has-index-nav", "target": ".collection-nav-desc-wrapper" }
+@tweak-index-background-color-2: #7c6922;
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-overlay-color", "label": "Overlay Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+@tweak-index-overlay-color: #000000;
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-use-gradient-index-overlay", "label": "Use Gradient for Overlay", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-overlay-color-2", "label": "Overlay Color 2", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-index.tweak-use-gradient-index-overlay, .tweak-use-gradient-index-background.has-index-nav", "target": ".collection-nav-desc-wrapper" }
+@tweak-index-overlay-color-2: #7c6922;
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-overlay-blend-mode", "label": "Overlay Blend Mode (no IE support)", "type": "dropdown", "options": ["Normal", "Multiply", "Screen", "Overlay"], "default": "Multiply", "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+
+// tweak: { "category": "Index Overlay/Background Colors", "title": "tweak-index-overlay-opacity", "label": "Overlay Opacity", "type": "value", "min": "0", "max": "1.0", "step": "0.1", "showOnlyWhenPresent": ".collection-type-index, .has-index-nav", "target": ".collection-nav-desc-wrapper" }
+@tweak-index-overlay-opacity: 0.5;
+
+
+
+// Slideshow
+
+// tweak: { "category": "Index Slideshow Options", "title": "tweak-index-slideshow-on", "label": "Slideshow On", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".collection-type-index", "target": ".collection-nav-desc-wrapper", "js": true }
+
+// tweak: { "category": "Index Slideshow Options", "title": "tweak-index-slideshow-touch-on", "label": "Slideshow On for Touch Devices", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".collection-type-index:not(.tweak-index-slideshow-on)", "target": ".collection-nav-desc-wrapper", "js": true }
+
+// tweak: { "category": "Index Slideshow Options", "title": "tweak-index-slideshow-animation", "label": "Slideshow Animation", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".collection-type-index.tweak-index-slideshow-on", "target": ".collection-nav-desc-wrapper", "js": true }
+
+// tweak: { "category": "Index Slideshow Options", "title": "tweak-index-slideshow-delay", "label": "Slideshow Delay", "type": "value", "step": 0.1, "min": 1, "max": 20, "showOnlyWhenPresent": ".collection-type-index.tweak-index-slideshow-on, .collection-type-index.tweak-index-slideshow-touch-on", "target": ".collection-nav-desc-wrapper", "js": true }
+@tweak-index-slideshow-delay: 7.5;
+
+// NOTE:
+// The title of the 'tweak-index-inactive-on-load' tweak no longer accurately
+// describes what it's doing. See README for more info.
+
+// tweak: { "category": "Index Slideshow Options", "title": "tweak-index-inactive-on-load", "label": "Show Index Slide", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".collection-type-index", "target": ".collection-nav-desc-wrapper", "js": true }
+
+
+
+// OPTIONS /////
+
+// Menu
+
+// tweak: { "category": "Index Menu Options", "title": "tweak-index-nav-position", "label": "Position", "type": "dropdown", "options": ["Left", "Bottom Left", "Center", "Bottom Center"], "default": "Left", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav", "js": true }
+
+// tweak: { "category": "Index Menu Options", "title": "tweak-index-nav-layout", "label": "Layout", "type": "dropdown", "options": ["Inline", "Stacked"], "default": "Inline", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav" }
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-index-menu-max-width", "label": "Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav" }
+@tweak-index-menu-max-width: 70%;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-tablet-index-menu-max-width", "label": "Tablet: Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav" }
+@tweak-tablet-index-menu-max-width: 70%;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-mobile-index-menu-max-width", "label": "Mobile: Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav" }
+@tweak-mobile-index-menu-max-width: 70%;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-index-menu-spacing", "label": "Link Spacing", "step": 0.1, "min": 0, "max": 10, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item" }
+@tweak-index-menu-spacing: 3;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-tablet-index-menu-spacing", "label": "Tablet: Link Spacing", "step": 0.1, "min": 0, "max": 10, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item" }
+@tweak-tablet-index-menu-spacing: 3;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-mobile-index-menu-spacing", "label": "Mobile: Link Spacing", "step": 0.1, "min": 0, "max": 10, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item" }
+@tweak-mobile-index-menu-spacing: 3;
+
+// tweak: { "category": "Index Menu Options", "type": "value", "title": "tweak-index-menu-padding", "label": "Padding", "min": 0, "max": 20, "showOnlyWhenPresent": ".tweak-index-nav-position-left .index-gallery-wrapper, .tweak-index-nav-position-bottom-left .index-gallery-wrapper, .tweak-index-nav-position-bottom-center .index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav", "js": true }
+@tweak-index-menu-padding: 2;
+
+
+// TYPOGRAPHY /////
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-menu-font", "label": "Menu Font", "type": "font", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span", "loadAllVariants": false }
+.tweak-index-menu-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 72px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  text-transform: none;
+}
+
+// tweak: { "category": "Index Typography", "type": "value", "title": "tweak-index-menu-font-min", "label": "Menu Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+@tweak-index-menu-font-min: 24px;
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-menu-color", "label": "Menu Color", "type": "color", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+@tweak-index-menu-color: #cccccc;
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-menu-hover-color", "label": "Menu Active Color", "type": "color", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+@tweak-index-menu-hover-color: #7c6922;
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-menu-link-style", "label": "Menu Link Style", "type": "dropdown", "options": ["Background", "Underline on Hover", "Strikethrough on Hover", "None"], "default": "None", "showOnlyWhenPresent": ".index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-menu-link-background-color", "label": "Menu Link Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-index-menu-link-style-background .index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+@tweak-index-menu-link-background-color: #fff;
+
+// tweak: { "category": "Index Typography", "type": "value", "title": "tweak-index-menu-link-border-size", "label": "Menu Link Underline Weight", "step": 1, "min": 1, "max": 24, "showOnlyWhenPresent": ".tweak-index-menu-link-style-underline-on-hover .index-gallery-wrapper", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-nav, .collection-nav-desc-wrapper .collection-nav .collection-nav-item span" }
+@tweak-index-menu-link-border-size: 3px;
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-desc-font", "label": "Description Font", "type": "font", "showOnlyWhenPresent": ".index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc", "loadAllVariants": false }
+.tweak-index-desc-font {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  text-transform: none;
+  text-decoration: none;
+}
+
+// tweak: { "category": "Index Typography", "type": "value", "title": "tweak-index-desc-font-min", "label": "Description Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc" }
+@tweak-index-desc-font-min: 24px;
+
+// tweak: { "category": "Index Typography", "title": "tweak-index-desc-color", "label": "Description Color", "type": "color", "showOnlyWhenPresent": ".index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc" }
+@tweak-index-desc-color: #CCCCCC;
+
+
+
+// Description
+
+// tweak: { "category": "Index Description Options", "title": "tweak-show-index-desc", "label": "Show Description", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc", "js": true }
+
+// tweak: { "category": "Index Description Options", "title": "tweak-index-desc-position", "label": "Position", "type": "dropdown", "options": ["Top", "Middle"], "default": "Middle", "showOnlyWhenPresent": ".tweak-show-index-desc .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc", "js": true }
+
+// tweak: { "category": "Index Description Options", "type": "value", "title": "tweak-index-desc-max-width", "label": "Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-index-desc .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc" }
+@tweak-index-desc-max-width: 70%;
+
+// tweak: { "category": "Index Description Options", "type": "value", "title": "tweak-tablet-index-desc-max-width", "label": "Tablet: Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-index-desc .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc" }
+@tweak-tablet-index-desc-max-width: 70%;
+
+// tweak: { "category": "Index Description Options", "type": "value", "title": "tweak-mobile-index-desc-max-width", "label": "Mobile: Max Width", "step": 1, "min": 40, "max": 100, "showOnlyWhenPresent": ".tweak-show-index-desc .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc" }
+@tweak-mobile-index-desc-max-width: 70%;
+
+// tweak: { "category": "Index Description Options", "type": "value", "title": "tweak-index-menu-desc-spacing", "label": "Menu/Desc Spacing", "step": 1, "min": 1, "max": 10, "showOnlyWhenPresent": ".tweak-show-index-desc.tweak-index-desc-position-middle.tweak-index-nav-position-left .index-gallery-wrapper .collection-desc, .tweak-show-index-desc.tweak-index-desc-position-middle.tweak-index-nav-position-center .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc", "js": true }
+@tweak-index-menu-desc-spacing: 2;
+
+// tweak: { "category": "Index Description Options", "title": "tweak-hide-index-desc-on-hover", "label": "Hide on Hover / While Collection Active", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-index-desc .index-gallery-wrapper .collection-desc", "target": ".collection-nav-desc-wrapper, .collection-nav-desc-wrapper .collection-desc", "js": true }
+
+
+
+// ///////////////////////////////////////////////////////////////
+// GALLERY ///////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// LAYOUT OPTIONS /////
+
+// tweak: { "category": "Gallery Layout Options", "title": "tweak-gallery-style", "label": "Style", "type": "dropdown", "options": ["Horizontal", "Stacked", "Masonry"], "default": "Horizontal", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-wrapper, .grid-item-wrapper", "js": true }
+
+// tweak: { "category": "Gallery Layout Options", "type": "value", "title": "tweak-gallery-gutter", "label": "Spacing", "min": 0, "max": 15, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-wrapper, .grid-item-wrapper", "js": true }
+@tweak-gallery-gutter: 2;
+
+// tweak: { "category": "Gallery Layout Options", "title": "tweak-full-width-first-landscape", "label": "Landscape Full-width When First", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".collection-type-gallery.tweak-gallery-style-horizontal", "target": ".grid-wrapper, .grid-item-wrapper", "js": true }
+
+
+
+// TITLE OVERLAY /////
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-show-gallery-title-overlay", "label": "Show Gallery Overlay", "type": "dropdown", "options": ["Always", "In Index", "Not in Index", "Never"], "default": "In Index", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-wrapper, .title-desc-inner-wrapper", "js": true }
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-gallery-overlay-color", "label": "Overlay Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".grid-wrapper, .title-desc-inner-wrapper" }
+@tweak-gallery-overlay-color: #000000;
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-use-gradient-gallery-overlay", "label": "Use Gradient for Overlay", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".grid-wrapper, .title-desc-inner-wrapper" }
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-gallery-overlay-color-2", "label": "Overlay Color 2", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-use-gradient-gallery-overlay, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-use-gradient-gallery-overlay, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-use-gradient-gallery-overlay", "target": ".grid-wrapper, .title-desc-inner-wrapper" }
+@tweak-gallery-overlay-color-2: #7c6922;
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-gallery-overlay-blend-mode", "label": "Overlay Blend Mode (no IE support)", "type": "dropdown", "options": ["Normal", "Multiply", "Screen", "Overlay"], "default": "Multiply", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".grid-wrapper, .title-desc-inner-wrapper" }
+
+// tweak: { "category": "Gallery Overlay", "title": "tweak-gallery-overlay-opacity", "label": "Overlay Opacity", "type": "value", "min": "0", "max": "1.0", "step": "0.1", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".grid-wrapper, .title-desc-inner-wrapper" }
+@tweak-gallery-overlay-opacity: 0.5;
+
+
+
+// TITLE/DESC OPTION /////
+
+// tweak: { "category": "Gallery Overlay Options", "title": "tweak-gallery-title-position", "label": "Title/Desc Position", "type": "dropdown", "options": ["Top Left", "Top Center", "Left", "Center", "Bottom Left", "Bottom Center"], "default": "Center", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".title-desc-inner-wrapper", "js": true }
+
+// tweak: { "category": "Gallery Overlay Options", "title": "tweak-show-gallery-title", "label": "Show Gallery Title", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-gallery-title-max-width", "label": "Title Max Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-gallery-title-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-tablet-gallery-title-max-width", "label": "Tablet: Title Max Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-tablet-gallery-title-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-mobile-gallery-title-max-width", "label": "Mobile: Title Max Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-mobile-gallery-title-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-gallery-title-padding", "label": "Title/Desc Padding", "min": 0, "max": 20, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.tweak-gallery-title-position-left.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.tweak-gallery-title-position-left.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).tweak-gallery-title-position-left.collection-type-gallery, .tweak-show-gallery-title-overlay-always.tweak-gallery-title-position-bottom-left.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.tweak-gallery-title-position-bottom-left.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).tweak-gallery-title-position-bottom-left.collection-type-gallery, .tweak-show-gallery-title-overlay-always.tweak-gallery-title-position-top-left.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.tweak-gallery-title-position-top-left.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).tweak-gallery-title-position-top-left.collection-type-gallery, .tweak-show-gallery-title-overlay-always.tweak-gallery-title-position-top-center.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.tweak-gallery-title-position-top-center.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).tweak-gallery-title-position-top-center.collection-type-gallery, .tweak-show-gallery-title-overlay-always.tweak-gallery-title-position-bottom-center.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.tweak-gallery-title-position-bottom-center.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).tweak-gallery-title-position-bottom-center.collection-type-gallery", "target": ".title-desc-inner-wrapper" }
+@tweak-gallery-title-padding: 2;
+
+// tweak: { "category": "Gallery Overlay Options", "title": "tweak-show-gallery-desc", "label": "Show Gallery Desc", "type": "checkbox", "active": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-gallery-title-max-width", "label": "Desc Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+@tweak-gallery-desc-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-tablet-gallery-title-max-width", "label": "Tablet: Desc Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+@tweak-tablet-gallery-desc-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-mobile-gallery-title-max-width", "label": "Mobile: Desc Width", "step": 1, "min": 30, "max": 100, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+@tweak-mobile-gallery-desc-max-width: 70%;
+
+// tweak: { "category": "Gallery Overlay Options", "type": "value", "title": "tweak-gallery-title-spacing", "label": "Gallery Title/Desc Spacing", "step": 1, "min": 0, "max": 10, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper" }
+@tweak-gallery-title-spacing: 2;
+
+
+// TYPOGRAPHY
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-title-font", "label": "Title Font", "type": "font", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title", "loadAllVariants": false }
+.tweak-gallery-title-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 1.2em;
+  font-style: italic;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+// tweak: { "category": "Gallery Overlay Typography", "type": "value", "title": "tweak-gallery-title-font-min", "label": "Title Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-gallery-title-font-min: 24px;
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-title-color", "label": "Title Color", "type": "color", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-gallery-title-color: #ffffff;
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-title-background", "label": "Title Background", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-title-background-color", "label": "Title Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-title.tweak-gallery-title-background, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-title.tweak-gallery-title-background, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-title.tweak-gallery-title-background", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper h1.page-title" }
+@tweak-gallery-title-background-color: #222222;
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-desc-font", "label": "Description Font", "type": "font", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc", "loadAllVariants": false }
+.tweak-gallery-desc-font {
+	font-family: Georgia, serif;
+  font-size: 36px;
+  line-height: 1.4em;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+// tweak: { "category": "Gallery Overlay Typography", "type": "value", "title": "tweak-gallery-desc-font-min", "label": "Desc Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+@tweak-gallery-desc-font-min: 16px;
+
+// tweak: { "category": "Gallery Overlay Typography", "title": "tweak-gallery-desc-color", "label": "Description Color", "type": "color", "showOnlyWhenPresent": ".tweak-show-gallery-title-overlay-always.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-in-index.has-index-nav.collection-type-gallery.tweak-show-gallery-desc, .tweak-show-gallery-title-overlay-not-in-index:not(.has-index-nav).collection-type-gallery.tweak-show-gallery-desc", "target": ".title-desc-inner-wrapper, .title-desc-inner-wrapper .page-desc" }
+@tweak-gallery-desc-color: #ffffff;
+
+
+
+// IMAGE TITLE/DESC TYPOGRAPHY
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-title-font", "label": "Image Title Font", "type": "font", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper", "loadAllVariants": false }
+.tweak-image-title-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2em;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+  text-align: center;
+}
+
+// tweak: { "category": "Gallery Caption Typography", "type": "value", "title": "tweak-image-title-font-min", "label": "Image Title Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-image-title-font-min: 24px;
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-title-color", "label": "Image Title Color", "type": "color", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-image-title-color: #ffffff;
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-title-background", "label": "Image Title Background", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-title-background-color", "label": "Image Title Background Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-gallery.tweak-image-title-background", "target": ".grid-item-wrapper" }
+@tweak-image-title-background-color: #222222;
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-desc-font", "label": "Image Description Font", "type": "font", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper", "loadAllVariants": false }
+.tweak-image-desc-font {
+  font-family: georgia, serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  text-transform: none;
+  text-align: center;
+}
+
+// tweak: { "category": "Gallery Caption Typography", "type": "value", "title": "tweak-image-desc-font-min", "label": "Image Description Font Min", "step": 1, "min": 8, "max": 72, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-image-desc-font-min: 15px;
+
+// tweak: { "category": "Gallery Caption Typography", "title": "tweak-image-desc-color", "label": "Image Description Color", "type": "color", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-image-desc-color: #ffffff;
+
+
+// IMAGE TITLE/DESC OPTIONS /////
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-show-gallery-image-captions", "label": "Captions Display", "type": "dropdown", "options": ["Always", "On Hover/Tap"], "default": "On Hover", "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper", "js": true }
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-image-caption-indicator-position", "label": "Caption Indicator Position", "type": "dropdown", "options": ["Bottom Left", "Bottom Right"], "default": "Bottom Left", "showOnlyWhenPresent": ".collection-type-gallery.tweak-show-gallery-image-captions-on-hover", "target": ".grid-item-wrapper", "js": true }
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-caption-button-color", "label": "Caption Indicator Color", "type": "color", "showOnlyWhenPresent": ".collection-type-gallery.tweak-show-gallery-image-captions-on-hover", "target": ".grid-item-wrapper" }
+@tweak-gallery-caption-button-color: #ffffff;
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-image-captions-position", "label": "Captions Position", "type": "dropdown", "options": ["Left", "Bottom Left", "Center", "Bottom Center"], "default": "Center", "showOnlyWhenPresent": ".collection-type-gallery.tweak-gallery-style-horizontal, .collection-type-gallery.tweak-gallery-style-masonry, .collection-type-gallery.tweak-gallery-style-stacked:not(.tweak-gallery-image-captions-below)", "target": ".grid-item-wrapper" }
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-image-captions-below", "label": "Captions Below Image", "type": "checkbox", "active": false, "showOnlyWhenPresent": ".collection-type-gallery.tweak-show-gallery-image-captions-always.tweak-gallery-style-stacked", "target": ".grid-item-wrapper" }
+
+// tweak: { "category": "Gallery Caption Options", "type": "value", "title": "tweak-gallery-image-captions-spacing", "label": "Captions Spacing", "step": 1, "min": 0, "max": 20, "showOnlyWhenPresent": ".collection-type-gallery .image-title-desc .image-desc", "target": ".grid-item-wrapper" }
+@tweak-gallery-image-captions-spacing: 2;
+
+// tweak: { "category": "Gallery Caption Options", "type": "value", "title": "tweak-gallery-image-captions-width", "label": "Captions Width", "step": 1, "min": 10, "max": 100, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-gallery-image-captions-width: 80%;
+
+// tweak: { "category": "Gallery Caption Options", "type": "value", "title": "tweak-tablet-gallery-image-captions-width", "label": "Tablet: Captions Width", "step": 1, "min": 10, "max": 100, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-tablet-gallery-image-captions-width: 80%;
+
+// tweak: { "category": "Gallery Caption Options", "type": "value", "title": "tweak-mobile-gallery-image-captions-width", "label": "Mobile: Captions Width", "step": 1, "min": 10, "max": 100, "showOnlyWhenPresent": ".collection-type-gallery", "target": ".grid-item-wrapper" }
+@tweak-mobile-gallery-image-captions-width: 80%;
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-captions-overlay-color", "label": "Captions Overlay Color", "type": "color", "disableTransparency": true, "showOnlyWhenPresent": ".collection-type-gallery.tweak-gallery-style-horizontal, .collection-type-gallery.tweak-gallery-style-masonry, .collection-type-gallery.tweak-gallery-style-stacked:not(.tweak-gallery-image-captions-below)", "target": ".grid-item-wrapper" }
+@tweak-gallery-captions-overlay-color: #000000;
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-captions-overlay-blend-mode", "label": "Captions Overlay Blend Mode (no IE support)", "type": "dropdown", "options": ["Normal", "Multiply", "Screen", "Overlay"], "default": "Multiply", "showOnlyWhenPresent": ".collection-type-gallery.tweak-gallery-style-horizontal, .collection-type-gallery.tweak-gallery-style-masonry, .collection-type-gallery.tweak-gallery-style-stacked:not(.tweak-gallery-image-captions-below)", "target": ".grid-item-wrapper" }
+
+// tweak: { "category": "Gallery Caption Options", "title": "tweak-gallery-captions-overlay-opacity", "label": "Captions Overlay Opacity", "type": "value", "min": "0", "max": "1.0", "step": "0.1", "showOnlyWhenPresent": ".collection-type-gallery.tweak-gallery-style-horizontal, .collection-type-gallery.tweak-gallery-style-masonry, .collection-type-gallery.tweak-gallery-style-stacked:not(.tweak-gallery-image-captions-below)", "target": ".grid-item-wrapper" }
+@tweak-gallery-captions-overlay-opacity: 0.5;

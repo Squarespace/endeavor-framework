@@ -1,0 +1,165 @@
+<!doctype html>
+<html {.if authenticatedAccount}class="authenticated-account"{.end}>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1">
+    {squarespace-headers}
+  </head>
+  <body id="{squarespace.page-id}" class='{squarespace.page-classes}{.section item}{.or}<squarespace:folder-navigation>{.if items.0}{.equal? collection.typeName "index"} has-index-nav{.end}{.end}</squarespace:folder-navigation>{.end}{.section collection}{.background-source-video?} has-main-image{.or}{.section mainImage} has-main-image{.end}{.end}{.end}' data-controller="MainContentPositioning, MercuryLoader">
+    <div class="mercury-transition-wrapper">
+      <div class="content-outer-wrapper" data-controller="HeaderOverflow, NavToggle, HeaderScroll, OverlayNavOverflow, SocialIconFadein, SetActiveNavLink">
+        <div class="overlay-nav-wrapper">
+          <div class="overlay-nav-inner-wrapper">
+            {.section website}{.section siteTagLine}
+            <h2 class="site-tagline--overlay">
+              {siteTagLine}
+            </h2>
+            {.end}{.end}
+            <nav class="main-navigation--overlay{.if showCart} has-cart{.end}">
+              <squarespace:navigation navigationId="main-nav" template="main-navigation" title="Navigation" description="Overlay Navigation" />
+              {@|apply cart.block}
+            </nav>
+            {.if website.socialAccounts}
+            <div class="header-social-icons--overlay">
+               <nav class="sqs-template-social-icons sqs-svg-icon--list" data-content-field="connected-accounts" data-annotation-alignment="bottom">
+                 {@|apply social-links.block}
+               </nav>
+            </div>
+            {.end}
+          </div>
+        </div>
+        <header id="siteHeader" class="site-header">
+          <div class="site-branding" data-content-field="site-title">
+          {.section website}
+            <h1{.if logoImageUrl} class="image"{.or} class="site-title"{.end}>
+              <a href="/">
+                {.if logoImageUrl}
+                <img src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+                {.or}
+                <span class="site-title">{siteTitle}</span>
+                {.end}
+              </a>
+            </h1>
+            {.section siteTagLine}
+            <h2 class="site-tagline">
+              {siteTagLine}
+            </h2>
+            {.end}
+          {.end}
+          </div>
+
+          <a class="nav-toggle flex-item" id="navToggle">
+            <div>
+              <svg class="Icon Icon--hamburger nav-toggle-label-icon" viewBox="0 0 24 18">
+                <g class="svg-icon use--even">
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="2" x2="24" y2="2"/>
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="9" x2="24" y2="9"/>
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="16" x2="24" y2="16"/>
+                </g>
+                <g class="svg-icon use--odd">
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="1.5" x2="24" y2="1.5"/>
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="8.5" x2="24" y2="8.5"/>
+                  <line fill="none" stroke-miterlimit="10" x1="0" y1="15.5" x2="24" y2="15.5"/>
+                </g>
+              </svg>
+              <svg class="Icon Icon--close nav-toggle-label-icon" viewBox="0 0 18 18">
+                <g class="svg-icon">
+                  <line fill="none" stroke-miterlimit="10" stroke-linecap="butt" x1="0" y1="0" x2="18" y2="18"/>
+                  <line fill="none" stroke-miterlimit="10" stroke-linecap="butt" x1="18" y1="0" x2="0" y2="18"/>
+                </g>
+              </svg>
+            </div>
+          </a>
+
+          <div class="nav-social-wrapper" data-content-field="navigation" data-annotation-alignment="bottom">
+            <nav id="mainNavigation" class='main-navigation{.if showCart} has-cart{.end}<squarespace:navigation navigationId="main-nav"> {.section items}{.if items.0} has-items{.end}{.end}</squarespace:navigation>'>
+              <squarespace:navigation navigationId="main-nav" template="main-navigation" title="Navigation" description="Header Navigation" />
+              {@|apply cart.block}
+            </nav>
+            {.if website.socialAccounts}
+            <div class="header-social-icons-with-nav">
+               <nav class="sqs-template-social-icons sqs-svg-icon--list">
+                 {@|apply social-links.block}
+               </nav>
+            </div>
+            {.end}
+          </div>
+
+
+          {.if website.socialAccounts}
+          <div class="header-social-icons-right">
+             <nav class="sqs-template-social-icons sqs-svg-icon--list">
+               {@|apply social-links.block}
+             </nav>
+          </div>
+          {.end}
+
+          {@|apply cart-icon.block}
+        </header>
+
+    		<div id="mainContent" class="main-content disable-scrolling" role="main">
+
+          {.equal? collection.typeName "index"}{.or}{.equal? collection.typeName "gallery"}{.or}{.section item}{.or}
+          {.section collection}
+          <div class="page-banner-wrapper{.background-source-video?}{.or}{.if mainImage}{.or} no-main-image{.end}{.end}" data-edit-main-image="Background" data-collection-id="{collection.id}" data-controller="PageBanners">
+            {.background-source-video?}
+            <div class="page-banner-image-wrapper" data-controller="VideoBackground">
+              {@|apply sqs-video-background.block}
+            </div>
+            {.or}
+              {.section mainImage}
+              <div class="page-banner-image-wrapper">
+                <img {@|image-meta} data-load="false" />
+              </div>
+              {.end}
+            {.end}
+          </div>
+          {.end}
+          {.end}{.end}{.end}
+
+          {.equal? collection.typeName "index"}{.or}
+          {.section item}{.or}
+          {.section categoryFilter}{.or}
+          {.section tagFilter}{.or}
+          {.section collection}
+          <div class="title-card-wrapper" data-controller="TitleCardHandler">
+            <div class='overlay blended-overlay{.equal? collection.typeName "gallery"} gallery-overlay{.or} page-title-overlay{.end} title-card-overlay'></div>
+            <div class="title-card" data-slide-id="title-card">
+              <div class="title-desc-outer-wrapper">
+                <div class="title-desc-inner-wrapper">
+                  <h1 class="page-title">
+                    <span data-content-field="title">{title}</span>
+                  </h1>
+                  <div class="page-desc" data-content-field="description">{description}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {.end}
+          {.end}
+          {.end}
+          {.end}
+          {.end}
+
+          <div class="main-content-inner-wrapper" data-content-field="main-content">
+    			{squarespace.main-content}
+          </div>
+
+          {.equal? collection.typeName "index"}{.or}
+          <footer class="site-footer">
+            <squarespace:block-field id="footer-blocks" columns="12" label="Footer Content" />
+          </footer>
+          {.end}
+    		</div>
+      </div>
+    </div>
+
+    <div class="index-nav">
+      <squarespace:folder-navigation template="index-navigation" />
+    </div>
+
+    <squarespace:script src="site-bundle.js" />
+
+    {squarespace-footers}
+  </body>
+</html>
