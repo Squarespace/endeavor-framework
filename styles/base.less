@@ -959,6 +959,7 @@ body:not(.collection-type-gallery).tweak-show-page-title-overlay-not-in-index:no
 
   .title-card-overlay {
     position: fixed;
+    will-change: opacity;
 
     .transition(~'opacity 300ms 0ms ease');
   }
@@ -982,6 +983,7 @@ body:not(.collection-type-gallery).tweak-show-page-title-overlay-not-in-index:no
     box-sizing: border-box;
     top: 50%;
     left: 50%;
+    will-change: transform;
 
     .transform(translate(-50%, -50%));
 
