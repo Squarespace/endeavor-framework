@@ -1,0 +1,10 @@
+{.if websiteSettings.userAccountsSettings.loginAllowed}
+<div class="user-accounts-link user-accounts-link--icon" data-controller="UserAccountsSetup">
+  <a href="#">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M21.89,19l-5-4.79a9.6,9.6,0,0,1-9.8,0L2.11,19a2,2,0,0,0-.62,1.43v3.2h21v-3.2A2,2,0,0,0,21.89,19Z" fill="none" stroke-miterlimit="10" stroke-linejoin="round"/>
+      <ellipse cx="12" cy="5.62" rx="5.5" ry="5.19" fill="none"/>
+    </svg>
+  </a>
+</div>
+{.end}

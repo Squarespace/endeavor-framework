@@ -24,6 +24,7 @@ import PageBanners from './controllers/PageBanners';
 import SetActiveNavLink from './controllers/SetActiveNavLink';
 import SocialIconFadein from './controllers/SocialIconFadein';
 import TitleCardHandler from './controllers/TitleCardHandler';
+import UserAccountsSetup from './controllers/UserAccountsSetup';
 
 // Bind controllers
 controller.register('FolderToggle', FolderToggle);
@@ -44,6 +45,7 @@ controller.register('PageBanners', PageBanners);
 controller.register('SetActiveNavLink', SetActiveNavLink);
 controller.register('SocialIconFadein', SocialIconFadein);
 controller.register('TitleCardHandler', TitleCardHandler);
+controller.register('UserAccountsSetup', UserAccountsSetup);
 
 controller.register('VideoBackground', (element) => {
   return VideoBackground(element, ['tweak-page-banner-image-height', 'tweak-show-page-banner-image']);
