@@ -7,16 +7,12 @@ function UserAccountsSetup (element) {
   };
 
   const initUserAccounts = () => {
-    const signInLink = element.querySelector('.sign-in');
-    const myAccountLink = element.querySelector('.my-account');
-    const isUserAuthenticated = UserAccounts.isUserAuthenticated();
+    const unusedSelector = UserAccounts.isUserAuthenticated() ? '.sign-in' : '.my-account';
+    const unusedNode = element.querySelector(unusedSelector);
 
-    if (signInLink && isUserAuthenticated) {
-      element.querySelector('a').removeChild(signInLink);
-    } else if (myAccountLink && !isUserAuthenticated) {
-      element.querySelector('a').removeChild(myAccountLink);
+    if (unusedNode) {
+      element.querySelector('a').removeChild(unusedNode);
     }
-
     element.classList.add('loaded');
     element.addEventListener('click', handleClick);
   };
