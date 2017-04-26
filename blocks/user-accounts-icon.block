@@ -1,10 +1,8 @@
 {.if websiteSettings.userAccountsSettings.loginAllowed}
 <div class="user-accounts-link user-accounts-link--icon" data-controller="UserAccountsSetup">
   <a href="#">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M21.89,19l-5-4.79a9.6,9.6,0,0,1-9.8,0L2.11,19a2,2,0,0,0-.62,1.43v3.2h21v-3.2A2,2,0,0,0,21.89,19Z" fill="none" stroke-miterlimit="10" stroke-linejoin="round"/>
-      <ellipse cx="12" cy="5.62" rx="5.5" ry="5.19" fill="none"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="thin"><path d="M18.18,18.6V16.33a7.94,7.94,0,1,0-6.35,0V18.6l-9,3a2,2,0,0,0-1.37,1.9V29h27V23.49a2,2,0,0,0-1.37-1.9Z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="thick"><path d="M17.94,18.34V16.23A7.41,7.41,0,1,0,7.65,9.43a7.43,7.43,0,0,0,4.41,6.81v2.11L3.87,21.09A2,2,0,0,0,2.5,23v5h25V23a2,2,0,0,0-1.37-1.9Z"/></svg>
   </a>
 </div>
 {.end}

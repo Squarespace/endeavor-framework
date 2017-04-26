@@ -848,7 +848,7 @@ body:not(.tweak-display-social-icons) {
 	display: none;
 }
 
-@user-accounts-icon-base-size: 24px;
+@user-accounts-icon-base-size: 30px;
 
 .tweak-user-account-link-position-icon-on-right {
 	.user-accounts-link--icon {
@@ -875,6 +875,23 @@ body:not(.tweak-display-social-icons) {
 			width: 100%;
       height: 100%;
 			overflow: visible;
+
+			&.thin {
+				display: none;
+			}
+		}
+	}
+
+	&.tweak-user-account-icon-weight-hairline,
+	&.tweak-user-account-icon-weight-light {
+		.user-accounts-link--icon svg {
+			&.thick {
+				display: none;
+			}
+
+			&.thin {
+				display: block;
+			}
 		}
 	}
 
@@ -896,8 +913,8 @@ body:not(.tweak-display-social-icons) {
 
 	&.tweak-user-account-icon-size-extra-small {
 		.user-accounts-link--icon {
-			width: @user-accounts-icon-base-size * .75;
-			height: @user-accounts-icon-base-size * .75;
+			width: floor(~'@{user-accounts-icon-base-size}' * .667);
+			height: floor(~'@{user-accounts-icon-base-size}' * .667);
 		}
 	}
 	&.tweak-user-account-icon-size-small {
