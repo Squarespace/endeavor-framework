@@ -1,5 +1,5 @@
 {.if websiteSettings.userAccountsSettings.loginAllowed}
-<div class="nav-item user-account-link" data-controller="UserAccountsSetup">
+<div class="nav-item user-accounts-link" data-controller="UserAccountsSetup">
   <a href="#">
     <span class="sign-in">Sign In</span>
     <span class="my-account">My Account</span>        
