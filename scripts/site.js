@@ -3,6 +3,7 @@ import 'core-js/fn/array/find';
 
 // General imports
 import controller from '@squarespace/controller';
+import { Tweak } from '@squarespace/core';
 import VideoBackground from '@squarespace/video-background';
 
 // controllers
