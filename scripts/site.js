@@ -46,5 +46,10 @@ controller.register('SocialIconFadein', SocialIconFadein);
 controller.register('TitleCardHandler', TitleCardHandler);
 
 controller.register('VideoBackground', (element) => {
-  return VideoBackground(element, ['tweak-page-banner-image-height', 'tweak-show-page-banner-image']);
+  return VideoBackground(element, ({ handleResize, handleTweak }) => {
+    Tweak.watch([
+      'tweak-page-banner-image-height',
+      'tweak-show-page-banner-image'
+    ], handleTweak)
+  });
 });
