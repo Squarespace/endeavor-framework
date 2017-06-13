@@ -33,8 +33,6 @@ class Autorows {
     }
 
     this.items = this.setupItems();
-    this.debouncedResize = debounce(this.resize.bind(this), 120);
-    window.addEventListener('resize', this.debouncedResize);
   }
 
   /**
@@ -241,17 +239,12 @@ class Autorows {
     this.rootNode.style.height = '';
   }
 
-  resize() {
-    if (typeof this.config.beforeResize === 'function') {
-      this.config.beforeResize();
-    }
+  afterResize() {
     this.reset();
     this.layout();
   }
 
   destroy() {
-    this.debouncedResize.cancel();
-    window.removeEventListener('resize', this.debouncedResize);
     this.reset();
     this.rootNode.classList.remove(MODULE_CLASSES.wrapperSelector);
     const children = this.rootNode.querySelectorAll('.' + MODULE_CLASSES.childSelector);

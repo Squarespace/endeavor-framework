@@ -97,7 +97,7 @@
           {@|apply cart-icon.block}
         </header>
 
-    		<div id="mainContent" class="main-content disable-scrolling" role="main">
+    		<div id="mainContent" class="main-content" role="main">
 
           {.equal? collection.typeName "index"}{.or}{.equal? collection.typeName "gallery"}{.or}{.section item}{.or}
           {.section collection}
