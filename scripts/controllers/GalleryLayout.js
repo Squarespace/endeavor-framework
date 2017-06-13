@@ -10,6 +10,7 @@ function GalleryLayout (element) {
   let grid;
   let infoHoverTimeout;
   const gridWrapper = element.querySelector('.grid-wrapper');
+  let currentViewportWidth = document.documentElement.clientWidth;
 
   const tweaksToWatch = [
     'tweak-gallery-gutter',
@@ -126,8 +127,7 @@ function GalleryLayout (element) {
         childSelector: '.grid-item-wrapper',
         imageWrapperSelector: '.grid-image-wrapper',
         afterLayout: gridReveal,
-        autoLoadImages: true,
-        beforeResize: updateGutterOnResize
+        autoLoadImages: true
       });
       grid.layout();
     } else if (tweakVals.galleryStyle === 'horizontal') {
@@ -138,8 +138,7 @@ function GalleryLayout (element) {
         imgWrapperSelector: 'grid-image-wrapper',
         isFullWidthLandscape: tweakVals.isFullWidthLandscape,
         afterLayout: gridReveal,
-        autoLoadImages: true,
-        beforeResize: updateGutterOnResize
+        autoLoadImages: true
       });
       grid.layout();
     } else {
@@ -154,6 +153,11 @@ function GalleryLayout (element) {
   };
 
   const resizeHandler = (e) => {
+    // this stops resize form running when zooming on ios.
+    if (document.documentElement.clientWidth === currentViewportWidth) {
+      return;
+    }
+
     if (window.innerWidth <= constants.mobileBreakpoint) {
       if (grid) {
         grid.destroy();
@@ -171,6 +175,8 @@ function GalleryLayout (element) {
     } else {
       render(false);
     }
+
+    currentViewportWidth = document.documentElement.clientWidth;
   };
 
   const debouncedResize = debounce(resizeHandler, 120);
