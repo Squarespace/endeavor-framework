@@ -3,6 +3,7 @@ import 'core-js/fn/array/find';
 
 // General imports
 import controller from '@squarespace/controller';
+import { Tweak } from '@squarespace/core';
 import VideoBackground from '@squarespace/video-background';
 
 // controllers
@@ -46,5 +47,10 @@ controller.register('SocialIconFadein', SocialIconFadein);
 controller.register('TitleCardHandler', TitleCardHandler);
 
 controller.register('VideoBackground', (element) => {
-  return VideoBackground(element, ['tweak-page-banner-image-height', 'tweak-show-page-banner-image']);
+  return VideoBackground(element, ({ handleTweak }) => {
+    Tweak.watch([
+      'tweak-page-banner-image-height',
+      'tweak-show-page-banner-image'
+    ], handleTweak);
+  });
 });
