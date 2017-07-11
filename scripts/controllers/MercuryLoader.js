@@ -117,7 +117,8 @@ function MercuryLoader (element) {
         { selector: 'meta[name="description"]', updateAttrs: true },
         { selector: 'link[rel="canonical"]', updateAttrs: true },
         { selector: 'link[rel="image_src"]', updateAttrs: true },
-        { selector: 'link[rel="alternate"]', updateAttrs: true }
+        { selector: 'link[rel="alternate"]', updateAttrs: true },
+        { selector: 'script[data-name="static-context"]', updateScript: true }
       ],
       onClickExceptions: [
         '[href^="/commerce"]'
