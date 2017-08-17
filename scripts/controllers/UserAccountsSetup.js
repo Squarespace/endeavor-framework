@@ -1,4 +1,4 @@
-import { UserAccounts } from '@sqs/core';
+import { UserAccounts } from '@squarespace/core';
 
 function UserAccountsSetup (element) {
   const handleClick = (e) => {
