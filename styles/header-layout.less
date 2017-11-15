@@ -877,21 +877,33 @@ body:not(.tweak-display-social-icons) {
 		height: 100%;
 		overflow: visible;
 
-		&.thin {
+		&.odd {
 			display: none;
 		}
 	}
 }
 
-.tweak-user-account-icon-weight-hairline,
-.tweak-user-account-icon-weight-light {
+.tweak-user-account-icon-weight-hairline {
 	.user-accounts-link--icon svg {
-		&.thick {
+		&.even {
 			display: none;
 		}
 
-		&.thin {
+		&.odd {
 			display: block;
+		}
+	}
+}
+
+.tweak-user-account-icon-weight-light,
+.tweak-user-account-icon-weight-heavy {
+	.user-accounts-link--icon svg {
+		&.even {
+			display: block;
+		}
+
+		&.odd {
+			display: none;
 		}
 	}
 }
