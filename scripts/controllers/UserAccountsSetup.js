@@ -11,7 +11,7 @@ function UserAccountsSetup (element) {
     const unusedNode = element.querySelector(unusedSelector);
 
     if (unusedNode) {
-      element.querySelector('a').removeChild(unusedNode);
+      unusedNode.parentNode.removeChild(unusedNode);
     }
     element.classList.add('loaded');
     element.addEventListener('click', handleClick);
