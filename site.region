@@ -17,6 +17,7 @@
             {.end}{.end}
             <nav class="main-navigation--overlay{.if showCart} has-cart{.end}">
               <squarespace:navigation navigationId="main-nav" template="main-navigation" title="Navigation" description="Overlay Navigation" />
+              {@|apply user-accounts-link.block}
               {@|apply cart.block}
             </nav>
             {.if website.socialAccounts}
@@ -74,6 +75,7 @@
           <div class="nav-social-wrapper" data-content-field="navigation" data-annotation-alignment="bottom">
             <nav id="mainNavigation" class='main-navigation{.if showCart} has-cart{.end}<squarespace:navigation navigationId="main-nav"> {.section items}{.if items.0} has-items{.end}{.end}</squarespace:navigation>'>
               <squarespace:navigation navigationId="main-nav" template="main-navigation" title="Navigation" description="Header Navigation" />
+              {@|apply user-accounts-link.block}
               {@|apply cart.block}
             </nav>
             {.if website.socialAccounts}
@@ -94,6 +96,7 @@
           </div>
           {.end}
 
+          {@|apply user-accounts-link-icon.block}
           {@|apply cart-icon.block}
         </header>
 

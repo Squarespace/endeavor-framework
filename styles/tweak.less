@@ -39,11 +39,11 @@
 
 // SHOPPING CART //////////////////////////////////////////////////
 
-// tweak: { "category": "Shopping Cart", "title": "tweak-cart-link-display", "label": "Cart Link Display", "type": "dropdown", "options": [ "With Nav", "Icon on Right", "Hide" ], "default": "With Nav", "showOnlyWhenPresent": ".sqs-custom-cart", "target": ".site-header, .site-header .nav-social-wrapper, .site-header .Cart--icon", "js": true }
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-link-display", "label": "Display", "type": "dropdown", "options": [ "With Nav", "Icon on Right", "Hide" ], "default": "With Nav", "showOnlyWhenPresent": ".sqs-custom-cart", "target": ".site-header, .site-header .nav-social-wrapper, .site-header .Cart--icon", "js": true }
 
-// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-style", "label": "Cart Icon Style", "type": "dropdown", "options": [ "Cart", "Bag" ], "default": "Cart", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-style", "label": "Style", "type": "dropdown", "options": [ "Cart", "Bag" ], "default": "Cart", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
 
-// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-color", "label": "Cart Icon Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-color", "label": "Icon Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
 @tweak-cart-icon-color: #eeeeee;
 
 // tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-flag-color", "label": "Quantity Background Color", "type": "color", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right.tweak-cart-icon-style-cart .sqs-custom-cart", "target": ".site-header .Cart--icon" }
@@ -59,9 +59,25 @@
   font-weight: normal;
 }
 
-// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-weight", "label": "Cart Icon Weight", "type": "dropdown", "options": [ "Hairline", "Light", "Medium", "Heavy" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-weight", "label": "Icon Weight", "type": "dropdown", "options": [ "Hairline", "Light", "Medium", "Heavy" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
 
-// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-size", "label": "Cart Icon Size", "type": "dropdown", "options": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+// tweak: { "category": "Shopping Cart", "title": "tweak-cart-icon-size", "label": "Icon Size", "type": "dropdown", "options": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ], "default": "Medium", "showOnlyWhenPresent": ".tweak-cart-link-display-icon-on-right .sqs-custom-cart", "target": ".site-header .Cart--icon" }
+
+
+
+
+// ///////////////////////////////////////////////////////////////
+// CUSTOMER ACCOUNTS /////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////
+
+// tweak: { "category" : "Customer Accounts", "type" : "dropdown", "title" : "tweak-user-account-link-position", "label" : "Link Position", "options" : [ "Icon on Right", "With Nav" ], "default" : "Icon on Right", "target" : ".site-header, .site-header .user-account-link" }
+
+// tweak: { "category": "Customer Accounts", "type": "color", "title": "tweak-user-account-icon-color", "label": "Icon Color", "showOnlyWhenPresent": ".tweak-user-account-link-position-icon-on-right", "target": ".site-header, .site-header .user-account-link" }
+@tweak-user-account-icon-color: #eeeeee;
+
+// tweak: { "category" : "Customer Accounts", "type" : "dropdown", "title" : "tweak-user-account-icon-weight", "label" : "Icon Weight", "showOnlyWhenPresent": ".tweak-user-account-link-position-icon-on-right", "options" : [ "Hairline", "Light", "Medium", "Heavy" ], "default": "Medium", "target" : ".site-header, .site-header .user-account-link" }
+
+// tweak: { "category" : "Customer Accounts", "type" : "dropdown", "title" : "tweak-user-account-icon-size", "label" : "Icon Size", "showOnlyWhenPresent": ".tweak-user-account-link-position-icon-on-right", "options" : [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ], "default": "Medium", "target" : ".site-header, .site-header .user-account-link" }
 
 
 
