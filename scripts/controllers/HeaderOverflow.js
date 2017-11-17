@@ -19,7 +19,8 @@ function HeaderOverflow (element) {
     nav: '.main-navigation',
     socialNav: '.header-social-icons-with-nav',
     socialRight: '.header-social-icons-right',
-    cartIcon: '.Cart--icon'
+    cartIcon: '.Cart--icon',
+    customerAccountsIcon: '.user-accounts-link--icon'
   };
 
   const tweaksToWatch = [
@@ -78,6 +79,7 @@ function HeaderOverflow (element) {
   const resolveOverflows = () => {
     const socialIconsDisplayed = Tweak.getValue('tweak-display-social-icons') === 'true';
     const cartIconDisplayed = Tweak.getValue('tweak-cart-link-display').toLowerCase() === 'icon on right';
+    const customerAccountsIconDisplayed = Tweak.getValue('tweak-user-account-link-position').toLowerCase() === 'icon on right';
     const spacingMultiplier = window.innerWidth <= constants.tabletBreakpoint ? 1.5 : 1;
     const elementSpacingTweak = parseFloat(Tweak.getValue('tweak-header-element-spacing'));
     const elementSpacingPixels = elementSpacingTweak * spacingMultiplier * window.innerWidth / 100;
@@ -95,9 +97,14 @@ function HeaderOverflow (element) {
       availableWidth -= widths.socialRight + elementSpacingPixels;
     }
 
-    // if the social icons are displayed, subtract their width from the available width.
+    // if the cart icon is displayed, subtract their width from the available width.
     if (cartIconDisplayed) {
       availableWidth -= widths.cartIcon + elementSpacingPixels;
+    }
+
+    // if the cart icon is displayed, subtract their width from the available width.
+    if (customerAccountsIconDisplayed) {
+      availableWidth -= widths.customerAccountsIcon + elementSpacingPixels;
     }
 
     // When site title + tagline + nav are wider than available space, switch to icon/mobile nav
