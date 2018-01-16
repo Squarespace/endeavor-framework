@@ -23,7 +23,7 @@
     "@squarespace/core": "1.1.0",
     "@squarespace/fonts-loaded": "1.0.2",
     "@squarespace/layout-autocolumns": "1.0.2",
-    "@squarespace/mercury": "1.1.4",
+    "@squarespace/mercury": "1.1.5",
     "@squarespace/polyfills": "1.0.1",
     "@squarespace/social-links": "1.0.2",
     "@squarespace/video-background": "2.0.2",
